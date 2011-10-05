@@ -10,6 +10,11 @@
 
 @implementation LabelMeViewController
 
+
+@synthesize AnnotationButton, Button2, Button3;
+
+#pragma mark -
+#pragma mark LabelMeViewController
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -19,6 +24,31 @@
     return self;
 }
 
+-(IBAction)annotationAction:(id)sender
+{
+    [self presentModalViewController:annotationViewController animated:YES];
+    
+    
+}
+-(IBAction)Button2Action:(id)sender
+{
+    
+    
+}
+-(IBAction)Button3Action:(id)sender
+{
+    
+    
+}
+
+
+#pragma mark -
+#pragma mark AnnotationViewDelegate
+-(void)didHitBack
+{
+    
+    
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

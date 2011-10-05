@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnnotationViewController : UIView
+@protocol AnnotationViewControllerDelegate;
 
+
+@interface AnnotationViewController : UIViewController
+
+@end
+
+
+@protocol AnnotationViewControllerDelegate
+-(void)didHitBack;
 @end
