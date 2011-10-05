@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
+		CD8AD70B143A3934005FCCFC /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD70A143A3934005FCCFC /* LabelViewController.m */; };
 		CDC4A9C21433A5ED007660BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C11433A5ED007660BB /* UIKit.framework */; };
 		CDC4A9C41433A5ED007660BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C31433A5ED007660BB /* Foundation.framework */; };
 		CDC4A9C61433A5ED007660BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C51433A5ED007660BB /* CoreGraphics.framework */; };
@@ -27,6 +29,8 @@
 		CDC4A9F91433A5EE007660BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDC4A9F71433A5EE007660BB /* InfoPlist.strings */; };
 		CDC4A9FB1433A5EE007660BB /* LabelMeTests.h in Resources */ = {isa = PBXBuildFile; fileRef = CDC4A9FA1433A5EE007660BB /* LabelMeTests.h */; };
 		CDC4A9FD1433A5EE007660BB /* LabelMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */; };
+		CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE26979143652D400B200FE /* LabelMeViewController.m */; };
+		CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2697C1436542800B200FE /* CameraOverlayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
+		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
+		CD8AD709143A3934005FCCFC /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
+		CD8AD70A143A3934005FCCFC /* LabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
 		CDC4A9BD1433A5ED007660BB /* LabelMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC4A9C11433A5ED007660BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDC4A9C31433A5ED007660BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,6 +72,10 @@
 		CDC4A9F81433A5EE007660BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDC4A9FA1433A5EE007660BB /* LabelMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelMeTests.h; sourceTree = "<group>"; };
 		CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelMeTests.m; sourceTree = "<group>"; };
+		CDE26978143652D400B200FE /* LabelMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelMeViewController.h; sourceTree = "<group>"; };
+		CDE26979143652D400B200FE /* LabelMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelMeViewController.m; sourceTree = "<group>"; };
+		CDE2697B1436542800B200FE /* CameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayViewController.h; sourceTree = "<group>"; };
+		CDE2697C1436542800B200FE /* CameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +141,14 @@
 			children = (
 				CDC4A9D21433A5ED007660BB /* LabelMeAppDelegate.h */,
 				CDC4A9D31433A5EE007660BB /* LabelMeAppDelegate.m */,
+				CDE26978143652D400B200FE /* LabelMeViewController.h */,
+				CDE26979143652D400B200FE /* LabelMeViewController.m */,
+				CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */,
+				CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */,
+				CDE2697B1436542800B200FE /* CameraOverlayViewController.h */,
+				CDE2697C1436542800B200FE /* CameraOverlayViewController.m */,
+				CD8AD709143A3934005FCCFC /* LabelViewController.h */,
+				CD8AD70A143A3934005FCCFC /* LabelViewController.m */,
 				CDC4A9D51433A5EE007660BB /* LabelMe.xcdatamodeld */,
 				CDC4A9D81433A5EE007660BB /* iPhone */,
 				CDC4A9DF1433A5EE007660BB /* iPad */,
@@ -297,6 +317,10 @@
 				CDC4A9D71433A5EE007660BB /* LabelMe.xcdatamodeld in Sources */,
 				CDC4A9DB1433A5EE007660BB /* LabelMeAppDelegate_iPhone.m in Sources */,
 				CDC4A9E21433A5EE007660BB /* LabelMeAppDelegate_iPad.m in Sources */,
+				CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */,
+				CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */,
+				CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */,
+				CD8AD70B143A3934005FCCFC /* LabelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +498,7 @@
 				CDC4AA021433A5EE007660BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDC4AA031433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMeTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +507,7 @@
 				CDC4AA051433A5EE007660BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

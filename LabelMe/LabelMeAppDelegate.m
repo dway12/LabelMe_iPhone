@@ -10,6 +10,7 @@
 
 @implementation LabelMeAppDelegate
 
+@synthesize navController;
 @synthesize window = _window;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
@@ -18,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -60,6 +62,7 @@
 
 - (void)dealloc
 {
+    [navController release];
     [_window release];
     [__managedObjectContext release];
     [__managedObjectModel release];
