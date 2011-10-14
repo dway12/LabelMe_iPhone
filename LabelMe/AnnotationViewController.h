@@ -7,15 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CameraOverlayViewController.h"
 
 @protocol AnnotationViewControllerDelegate;
 
 
-@interface AnnotationViewController : UIViewController
+@interface AnnotationViewController : UIViewController <UINavigationControllerDelegate, CameraOverlayViewControllerDelegate>
+{
+    id <AnnotationViewControllerDelegate> delegate;
+    CameraOverlayViewController *cameraOverlayViewController;
+    
+    
+@private
+    UIButton *takePictureModeButton;
+    UIButton *backButton;
+    
+
+}
+
+
+@property (nonatomic, assign) id <AnnotationViewControllerDelegate> delegate;
+@property (nonatomic, retain) CameraOverlayViewController  *cameraOverlayViewController;
+@property (nonatomic, retain) IBOutlet UIButton *takePictureModeButton;
+@property (nonatomic, retain) IBOutlet UIButton *backButton;
+
+-(IBAction)didHitBackButtonAction:(id)sender;
+-(IBAction)pictureModeButtonAction:(id)sender;
+
 
 @end
-
-
 @protocol AnnotationViewControllerDelegate
 -(void)didHitBack;
 @end

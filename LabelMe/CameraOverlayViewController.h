@@ -12,7 +12,15 @@
 
 
 
-@interface CameraOverlayViewController : UIViewController
+@interface CameraOverlayViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+{
+    
+    id <CameraOverlayViewControllerDelegate> delegate;
+    UIImagePickerController *imagePickerController;
+}
+
+@property (nonatomic, assign) id<CameraOverlayViewControllerDelegate> delegate;
+@property (nonatomic, retain) UIImagePickerController *imagePickerController;
 
 @end
 

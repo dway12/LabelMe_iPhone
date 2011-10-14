@@ -31,6 +31,7 @@
 		CDC4A9FD1433A5EE007660BB /* LabelMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */; };
 		CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE26979143652D400B200FE /* LabelMeViewController.m */; };
 		CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2697C1436542800B200FE /* CameraOverlayViewController.m */; };
+		CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		CDE26979143652D400B200FE /* LabelMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelMeViewController.m; sourceTree = "<group>"; };
 		CDE2697B1436542800B200FE /* CameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayViewController.h; sourceTree = "<group>"; };
 		CDE2697C1436542800B200FE /* CameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayViewController.m; sourceTree = "<group>"; };
+		CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				CDE26979143652D400B200FE /* LabelMeViewController.m */,
 				CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */,
 				CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */,
+				CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */,
 				CDE2697B1436542800B200FE /* CameraOverlayViewController.h */,
 				CDE2697C1436542800B200FE /* CameraOverlayViewController.m */,
 				CD8AD709143A3934005FCCFC /* LabelViewController.h */,
@@ -277,6 +280,7 @@
 				CDC4A9CE1433A5ED007660BB /* InfoPlist.strings in Resources */,
 				CDC4A9DE1433A5EE007660BB /* MainWindow_iPhone.xib in Resources */,
 				CDC4A9E51433A5EE007660BB /* MainWindow_iPad.xib in Resources */,
+				CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

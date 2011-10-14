@@ -11,22 +11,46 @@
 @implementation LabelMeViewController
 
 
-@synthesize AnnotationButton, Button2, Button3;
+@synthesize AnnotationButton, Button2, Button3, annotationViewController, LabelMeView;
 
 #pragma mark -
 #pragma mark LabelMeViewController
-- (id)initWithFrame:(CGRect)frame
+
+-(void)viewDidLoad
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self.annotationViewController = 
+            [[[AnnotationViewController alloc] initWithNibName:@"AnnotationView" bundle:nil] autorelease];
+    
+    self.annotationViewController.delegate = self;
+    
+}
+-(void)viewDidUnload
+{
+    self.LabelMeView = nil;
+    self.AnnotationButton = nil;
+    self.Button2 = nil;
+    self.Button3 = nil;
+    self.annotationViewController = nil;
 }
 
+
+
+-(void)dealloc
+{
+    [annotationViewController release];
+    [LabelMeView release];
+    [AnnotationButton release];
+    [Button3 release];
+    [Button2 release];
+    [super dealloc];
+    
+    
+}
 -(IBAction)annotationAction:(id)sender
 {
     [self presentModalViewController:annotationViewController animated:YES];
+   // printf("blaha");
+  //  NSLog(@"blaha");
     
     
 }
@@ -47,7 +71,7 @@
 -(void)didHitBack
 {
     
-    
+    [self dismissModalViewControllerAnimated:YES];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -10,13 +10,25 @@
 
 @implementation CameraOverlayViewController
 
-- (id)initWithFrame:(CGRect)frame
+@synthesize delegate;
+
+
+
+-(void)viewDidLoad
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    
+    
+}
+-(void)viewDidUnload
+{
+    
+    
+}
+
+-(void)dealloc
+{
+    
+    
 }
 
 /*
