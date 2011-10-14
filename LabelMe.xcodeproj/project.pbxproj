@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2819871448C01F00634D37 /* CameraOverlay.xib */; };
 		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
 		CD8AD70B143A3934005FCCFC /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD70A143A3934005FCCFC /* LabelViewController.m */; };
 		CDC4A9C21433A5ED007660BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C11433A5ED007660BB /* UIKit.framework */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
 		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
 		CD8AD709143A3934005FCCFC /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */,
 				CDE2697B1436542800B200FE /* CameraOverlayViewController.h */,
 				CDE2697C1436542800B200FE /* CameraOverlayViewController.m */,
+				CD2819871448C01F00634D37 /* CameraOverlay.xib */,
 				CD8AD709143A3934005FCCFC /* LabelViewController.h */,
 				CD8AD70A143A3934005FCCFC /* LabelViewController.m */,
 				CDC4A9D51433A5EE007660BB /* LabelMe.xcdatamodeld */,
@@ -281,6 +284,7 @@
 				CDC4A9DE1433A5EE007660BB /* MainWindow_iPhone.xib in Resources */,
 				CDC4A9E51433A5EE007660BB /* MainWindow_iPad.xib in Resources */,
 				CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */,
+				CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

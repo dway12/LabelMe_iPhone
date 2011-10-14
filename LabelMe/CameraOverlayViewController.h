@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @protocol CameraOverlayViewControllerDelegate; 
 
@@ -17,10 +18,27 @@
     
     id <CameraOverlayViewControllerDelegate> delegate;
     UIImagePickerController *imagePickerController;
+    
+@private
+    
+    UIBarButtonItem *takePictureButton;
+    UIBarButtonItem *backButton;
+    
+    SystemSoundID tickSound;
+    
+    
 }
 
 @property (nonatomic, assign) id<CameraOverlayViewControllerDelegate> delegate;
-@property (nonatomic, retain) UIImagePickerController *imagePickerController;
+@property (nonatomic, retain) IBOutlet UIImagePickerController *imagePickerController;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *takePictureButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+
+-(void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType;
+
+-(IBAction)backButton:(id)sender;
+-(IBAction)takePicture:(id)sender;
+
 
 @end
 

@@ -10,7 +10,7 @@
 
 @implementation CameraOverlayViewController
 
-@synthesize delegate;
+@synthesize delegate, takePictureButton, backButton, imagePickerController;
 
 
 
