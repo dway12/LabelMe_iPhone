@@ -36,7 +36,7 @@
 
 -(void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType;
 
--(IBAction)backButton:(id)sender;
+-(IBAction)done:(id)sender;
 -(IBAction)takePicture:(id)sender;
 
 

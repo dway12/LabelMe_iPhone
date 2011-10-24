@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioServices.h>
 #import "AnnotationViewController.h"
-#import "Annotation.h"
 
 
 @interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate>

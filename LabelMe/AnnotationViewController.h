@@ -8,19 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "CameraOverlayViewController.h"
+#import "TracingOverlayViewController.h"
 
 @protocol AnnotationViewControllerDelegate;
 
 
-@interface AnnotationViewController : UIViewController <UINavigationControllerDelegate, CameraOverlayViewControllerDelegate>
+@interface AnnotationViewController : UIViewController <UINavigationControllerDelegate, CameraOverlayViewControllerDelegate, TracingOverlayViewControllerDelegate>
 {
     id <AnnotationViewControllerDelegate> delegate;
     CameraOverlayViewController *cameraOverlayViewController;
     
     
+    TracingOverlayViewController *tracingOverlayViewController;
+    
+    
 @private
     UIButton *takePictureModeButton;
     UIButton *backButton;
+    NSMutableArray *capturedImages;
     
 
 }
@@ -28,8 +33,11 @@
 
 @property (nonatomic, assign) id <AnnotationViewControllerDelegate> delegate;
 @property (nonatomic, retain) CameraOverlayViewController  *cameraOverlayViewController;
+@property (nonatomic, retain) TracingOverlayViewController *tracingOverlayViewController;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureModeButton;
 @property (nonatomic, retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) NSMutableArray *capturedImages;
+
 
 -(IBAction)didHitBackButtonAction:(id)sender;
 -(IBAction)pictureModeButtonAction:(id)sender;

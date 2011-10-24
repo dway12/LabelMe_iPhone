@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2819871448C01F00634D37 /* CameraOverlay.xib */; };
 		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
-		CD8AD70B143A3934005FCCFC /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD70A143A3934005FCCFC /* LabelViewController.m */; };
+		CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */; };
+		CD9CBD571455E58800F15024 /* TracingOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9CBD561455E58800F15024 /* TracingOverlayView.xib */; };
 		CDC4A9C21433A5ED007660BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C11433A5ED007660BB /* UIKit.framework */; };
 		CDC4A9C41433A5ED007660BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C31433A5ED007660BB /* Foundation.framework */; };
 		CDC4A9C61433A5ED007660BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C51433A5ED007660BB /* CoreGraphics.framework */; };
@@ -49,8 +50,9 @@
 		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
 		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
-		CD8AD709143A3934005FCCFC /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
-		CD8AD70A143A3934005FCCFC /* LabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
+		CD9CBD521455E54700F15024 /* TracingOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracingOverlayViewController.h; sourceTree = "<group>"; };
+		CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracingOverlayViewController.m; sourceTree = "<group>"; };
+		CD9CBD561455E58800F15024 /* TracingOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TracingOverlayView.xib; sourceTree = "<group>"; };
 		CDC4A9BD1433A5ED007660BB /* LabelMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC4A9C11433A5ED007660BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDC4A9C31433A5ED007660BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,8 +155,9 @@
 				CDE2697B1436542800B200FE /* CameraOverlayViewController.h */,
 				CDE2697C1436542800B200FE /* CameraOverlayViewController.m */,
 				CD2819871448C01F00634D37 /* CameraOverlay.xib */,
-				CD8AD709143A3934005FCCFC /* LabelViewController.h */,
-				CD8AD70A143A3934005FCCFC /* LabelViewController.m */,
+				CD9CBD521455E54700F15024 /* TracingOverlayViewController.h */,
+				CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */,
+				CD9CBD561455E58800F15024 /* TracingOverlayView.xib */,
 				CDC4A9D51433A5EE007660BB /* LabelMe.xcdatamodeld */,
 				CDC4A9D81433A5EE007660BB /* iPhone */,
 				CDC4A9DF1433A5EE007660BB /* iPad */,
@@ -288,6 +291,7 @@
 				CDC4A9E51433A5EE007660BB /* MainWindow_iPad.xib in Resources */,
 				CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */,
 				CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */,
+				CD9CBD571455E58800F15024 /* TracingOverlayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +335,7 @@
 				CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */,
 				CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */,
 				CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */,
-				CD8AD70B143A3934005FCCFC /* LabelViewController.m in Sources */,
+				CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
