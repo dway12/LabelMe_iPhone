@@ -25,6 +25,7 @@
 @private
     UIButton *takePictureModeButton;
     UIButton *backButton;
+    UIButton *tracingModeButton;
     NSMutableArray *capturedImages;
     
 
@@ -36,11 +37,13 @@
 @property (nonatomic, retain) TracingOverlayViewController *tracingOverlayViewController;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureModeButton;
 @property (nonatomic, retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) IBOutlet UIButton *tracingModeButton;
 @property (nonatomic, retain) NSMutableArray *capturedImages;
 
 
 -(IBAction)didHitBackButtonAction:(id)sender;
 -(IBAction)pictureModeButtonAction:(id)sender;
+-(IBAction)startTracing:(id)sender;
 
 
 @end

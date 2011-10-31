@@ -11,15 +11,16 @@
 @implementation AnnotationViewController
 
 @synthesize cameraOverlayViewController, takePictureModeButton, delegate,capturedImages,
-            backButton, tracingOverlayViewController;
+            backButton, tracingOverlayViewController, tracingModeButton;
 
 
 -(void)viewDidLoad
 {
     self.cameraOverlayViewController = 
-    [[[CameraOverlayViewController alloc] initWithNibName:@"CameraOverlayView" bundle:nil] autorelease];
+    [[[CameraOverlayViewController alloc] initWithNibName:@"CameraOverlay" bundle:nil] autorelease];
     
-    self.tracingOverlayViewController = [[[TracingOverlayViewController alloc] initWithNibName:@"TracingOverlayView" bundle:nil] autorelease];
+    self.tracingOverlayViewController = 
+    [[[TracingOverlayViewController alloc] initWithNibName:@"TracingOverlayView" bundle:nil] autorelease];
     
     self.capturedImages = [NSMutableArray array];
 
@@ -30,6 +31,7 @@
 }
 -(void)viewDidUnload
 {
+    tracingOverlayViewController = nil;
     cameraOverlayViewController = nil;
     takePictureModeButton = nil;
     backButton = nil;
@@ -39,6 +41,7 @@
 }
 -(void)dealloc
 {
+    [tracingOverlayViewController release];
     [cameraOverlayViewController release];
     [takePictureModeButton release];
     [backButton release];
@@ -96,29 +99,44 @@
     
     //send picture to labeling view
     [self.capturedImages addObject:picture];
+    [self.tracingOverlayViewController setPicture:picture];
+    NSLog(@"finished did take picture");
+
+
     
+    
+    
+}
+-(IBAction)startTracing:(id)sender
+{
+    NSLog(@"blahblahb");
+
+    [self presentModalViewController:self.tracingOverlayViewController animated:YES];
     
 }
 -(void)didFinishWithCamera
 {
+
     
     [self dismissModalViewControllerAnimated:YES];
-    
-    
+
+
 }
+
 
 #pragma mark -
 #pragma mark TracingOverlayViewDelegate
 -(void)finishedTracing
 {
-    
+    //send data to server
+    [self dismissModalViewControllerAnimated:YES];
     
 }
 
 -(void)didHitCancel
 {
     
-    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 
