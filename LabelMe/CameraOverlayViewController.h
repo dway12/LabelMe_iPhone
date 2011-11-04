@@ -24,7 +24,6 @@
     UIBarButtonItem *takePictureButton;
     UIBarButtonItem *backButton;
     
-    SystemSoundID tickSound;
     
     
 }
