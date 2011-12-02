@@ -10,22 +10,32 @@
 
 @implementation TracingOverlayViewController
 
-@synthesize doneTracingButton,cancelButton,delegate,tracingPictureView, locationArray, tracingPicture;
+@synthesize doneTracingButton, cancelButton, delegate, tracingPictureView, locationArray, tracingPicture, originalTracingPicture, LabelerText, labelString;
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [[event allTouches] anyObject];
-	location = [touch locationInView:touch.view];
-    NSString *value =  NSStringFromCGPoint(location);
-    [self.locationArray addObject:value];
-    NSLog(@"%@", NSStringFromCGPoint(location));
+
     
-    if( upperLeft == nil){
-        
-        upperLeft = &location;
-    }else{
-        
-        lowerRight = &location;
+    if( upperLeft == nil && lowerRight == nil ){
+        locationUpperLeft = [touch locationInView:touch.view];
+        NSString *value =  NSStringFromCGPoint(locationUpperLeft);
+        [self.locationArray addObject:value];
+        NSLog(@"upper Left:");
+        NSLog(@"%@", NSStringFromCGPoint(locationUpperLeft));
+
+        upperLeft = &locationUpperLeft;
+    }else if (upperLeft != nil && lowerRight == nil){
+        locationLowerRight = [touch locationInView:touch.view];
+        NSString *value =  NSStringFromCGPoint(locationLowerRight);
+        [self.locationArray addObject:value];
+        NSLog(@"lowerRight");
+        NSLog(@"%@", NSStringFromCGPoint(locationLowerRight));
+
+        lowerRight = &locationLowerRight;
         [self drawRect];
+    }else{
+        NSLog(@"clearingBox");
+        [self clearBox];
     }
     
     
@@ -34,6 +44,13 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	//[self touchesBegan:touches withEvent:event];
+}
+-(void)clearBox
+{
+    upperLeft = nil;
+    lowerRight = nil;
+    [self setPicture:originalTracingPicture];
+
 }
 -(void)drawRect
 {
@@ -44,23 +61,40 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     // flip orientation
-//    CGContextTranslateCTM(context, 0, self.view.bounds.size.height);
-//    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextScaleCTM(context, 1, -1);
+    CGContextRotateCTM(context, -3.14159265/2);
     
-    CGContextDrawImage(context, self.view.bounds, self.tracingPicture.CGImage);
+    CGContextDrawImage(context, CGRectMake(0, 0, 460, 320), self.tracingPicture.CGImage);
     NSLog(@"drawing image");
     
     // drawing with a white stroke color
     CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
+    CGContextSetLineWidth(context, 20);
     // drawing with a white fill color
-    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+    //CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
     // Add Filled Rectangle, 
-    CGContextFillRect(context, CGRectMake(0.0, 0.0, 200.0, 200.0));
+    CGContextRotateCTM(context, -3.14159265/2);
+    CGContextScaleCTM(context, -1, 1);
     
-    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextBeginPath(context);
+    
+    CGContextMoveToPoint(context, upperLeft->x, upperLeft->y); //start point
+    CGContextAddLineToPoint(context, lowerRight->x, upperLeft->y);
+    CGContextAddLineToPoint(context, lowerRight->x, lowerRight->y);
+    CGContextAddLineToPoint(context, upperLeft->x, lowerRight->y); // end path
+    
+    CGContextClosePath(context); // close path
+    
+    CGContextSetLineWidth(context, 8.0); // this is set from now on until you explicitly change it
+    
+    CGContextStrokePath(context); // do actual stroking
+    
+    UIImage *screenshot1 = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
-    [self setPicture:screenshot];
+    
+    
+    [self setPicture:screenshot1];
     
 }
 
@@ -68,6 +102,7 @@
 {
 
     self.tracingPictureView.image = tracingPicture;
+    //[LabelTextFieldItem initWithCustomView:LabelerText];
 
 }
 
@@ -77,6 +112,8 @@
     self.tracingPictureView = nil;
     self.cancelButton = nil;
     self.doneTracingButton = nil;
+    self.LabelerText = nil;
+   // self.LabelTextFieldItem = nil;
     [super viewDidUnload];
     
 }
@@ -85,16 +122,26 @@
     [tracingPictureView release];
     [cancelButton release];
     [doneTracingButton release];
+    [LabelerText release];
+   // [LabelTextFieldItem release];
     
     [super release];
     
+    
+}
+-(void)setOriginalPicture:(UIImage*)picture
+{
+    self->originalTracingPicture = picture;
+    self->tracingPicture = picture;
+    self.tracingPictureView.image = picture;
+    NSLog(@"set ori pic");
     
 }
 -(void)setPicture:(UIImage*)picture
 {
     
     self->tracingPicture = picture;
-    self.tracingPictureView.image = tracingPicture;
+    self.tracingPictureView.image = picture;
 
     NSLog(@"set picture");
 }
@@ -138,10 +185,14 @@
 -(IBAction)doneTracingAction:(id)sender
 {
     
+    NSLog(@"doneTracingAction clicked");
+    [self.delegate finishedTracing:tracingPicture:labelString];
     
 }
 -(IBAction)cancelAction:(id)sender
 {
+    upperLeft = nil;
+    lowerRight = nil;
     
     [self.delegate didHitCancel];
     
@@ -153,6 +204,16 @@
     
     
     
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField*)theLabelerText
+{
+    [theLabelerText resignFirstResponder];
+    NSLog(@"did hit enter");
+    NSLog(@"%@", theLabelerText.text);
+    labelString = theLabelerText.text;
+    
+    return YES;
 }
 
 

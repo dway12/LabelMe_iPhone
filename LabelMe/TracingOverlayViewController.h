@@ -12,7 +12,7 @@
 
 @protocol TracingOverlayViewControllerDelegate;
 
-@interface TracingOverlayViewController : UIViewController <UINavigationControllerDelegate>
+@interface TracingOverlayViewController : UIViewController <UINavigationControllerDelegate ,UITextFieldDelegate>
 {
     id <TracingOverlayViewControllerDelegate> delegate;
 @private
@@ -22,21 +22,36 @@
     UIBarButtonItem *doneTracingButton;
     UIBarButtonItem *cancelButton;
     
+    UITextField *LabelerText;
+    
+    
     UIImage *tracingPicture;
+    UIImage *originalTracingPicture;
     
     UIImageView *tracingPictureView;
     
     CGPoint *upperLeft;
     CGPoint *lowerRight;
     
-    CGPoint location;
+    CGPoint locationUpperLeft;
+    CGPoint locationLowerRight;
+    NSString *labelString;
+    
     
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *tracingPictureView;
 @property (nonatomic, retain) UIImage *tracingPicture;
+@property (nonatomic, retain) UIImage *originalTracingPicture;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneTracingButton;
+
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
+
+
+
+@property (nonatomic, retain) IBOutlet UITextField *LabelerText;
+@property (nonatomic, retain) NSString *labelString;
+
 @property (nonatomic, retain) id<TracingOverlayViewControllerDelegate> delegate;
 
 @property (nonatomic, retain) NSMutableArray *locationArray;
@@ -48,12 +63,14 @@
 -(IBAction)touchPicture:(id)sender;
 
 -(void)setPicture:(UIImage*)picture;
+-(void)setOriginalPicture:(UIImage *)picture1;
 -(void)drawRect;
+-(void)clearBox;
 
 
 @end
 
 @protocol TracingOverlayViewControllerDelegate
--(void)finishedTracing;
+-(void)finishedTracing:(UIImage*)pictureToSend:(NSString*)label;
 -(void)didHitCancel;
 @end
