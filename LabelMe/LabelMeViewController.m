@@ -49,8 +49,7 @@
 -(IBAction)annotationAction:(id)sender
 {
     [self presentModalViewController:annotationViewController animated:YES];
-   // printf("blaha");
-  //  NSLog(@"blaha");
+
     
     
 }

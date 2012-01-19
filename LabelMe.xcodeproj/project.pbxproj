@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD18398914C8B042003BFC54 /* LabelMeImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD18398814C8B042003BFC54 /* LabelMeImage.jpg */; };
 		CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2819871448C01F00634D37 /* CameraOverlay.xib */; };
 		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
 		CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD18398814C8B042003BFC54 /* LabelMeImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage.jpg; sourceTree = "<group>"; };
 		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
 		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				CDC4A9D91433A5EE007660BB /* LabelMeAppDelegate_iPhone.h */,
 				CDC4A9DA1433A5EE007660BB /* LabelMeAppDelegate_iPhone.m */,
 				CDC4A9DC1433A5EE007660BB /* MainWindow_iPhone.xib */,
+				CD18398814C8B042003BFC54 /* LabelMeImage.jpg */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */,
 				CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */,
 				CD9CBD571455E58800F15024 /* TracingOverlayView.xib in Resources */,
+				CD18398914C8B042003BFC54 /* LabelMeImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

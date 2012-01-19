@@ -32,6 +32,8 @@
 @property (nonatomic, retain) IBOutlet UIButton *AnnotationButton;
 @property (nonatomic, retain) IBOutlet UIButton *Button2;
 @property (nonatomic, retain) IBOutlet UIButton *Button3;
+
+//labelmeImage
 @property (nonatomic, retain) IBOutlet UIView *LabelMeView;
 
 //home screen button actions
