@@ -17,7 +17,6 @@
     id <TracingOverlayViewControllerDelegate> delegate;
 @private
     
-    NSMutableArray *locationArray;
     
     UIBarButtonItem *doneTracingButton;
     UIBarButtonItem *cancelButton;
@@ -36,6 +35,13 @@
     CGPoint locationUpperLeft;
     CGPoint locationLowerRight;
     NSString *labelString;
+    NSString *pointStringUpperLeft;
+    NSString *pointStringUpperRight;
+    NSString *pointStringLowerRight;
+    NSString *pointStringLowerLeft;
+    NSString *pointStringComplete;
+    
+    double imageScaleFactor;
     
     
 }
@@ -46,15 +52,16 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneTracingButton;
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic) double imageScaleFactor;
 
 
 
 @property (nonatomic, retain) IBOutlet UITextField *LabelerText;
 @property (nonatomic, retain) NSString *labelString;
+@property (nonatomic, retain) NSString *pointStringComplete;
 
 @property (nonatomic, retain) id<TracingOverlayViewControllerDelegate> delegate;
 
-@property (nonatomic, retain) NSMutableArray *locationArray;
 
 
 
@@ -66,11 +73,12 @@
 -(void)setOriginalPicture:(UIImage *)picture1;
 -(void)drawRect;
 -(void)clearBox;
+-(void)createPointString;
 
 
 @end
 
 @protocol TracingOverlayViewControllerDelegate
--(void)finishedTracing:(UIImage*)pictureToSend:(NSString*)label;
+-(void)finishedTracing:(UIImage*)pictureToSend:(NSString*)label:(NSString*)pointStringComplete;
 -(void)didHitCancel;
 @end

@@ -126,14 +126,20 @@
 
 #pragma mark -
 #pragma mark TracingOverlayViewDelegate
--(void)finishedTracing: (UIImage*) pictureToSend: (NSString*) labelText1
+-(void)finishedTracing: (UIImage*) pictureToSend: (NSString*) labelText1: (NSString*) pointStringComplete
 {
   
 
+    NSLog(@"settingupRequest");
+    NSLog(@"the size of the image is %f, %f", pictureToSend.size.width, pictureToSend.size.height);
+    UIGraphicsBeginImageContext(CGSizeMake(480, 690));
+    [pictureToSend drawInRect:CGRectMake(0, 0, 480, 690)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();    
+    UIGraphicsEndImageContext();
     
-    NSData *imageData = UIImageJPEGRepresentation(pictureToSend, .1);
+    NSData *imageData = UIImageJPEGRepresentation(newImage, 1);
 	// setting up the URL to post to
-	NSString *urlString = @"http://31-34-21.wireless.csail.mit.edu/~DWay/file_upload.php";
+	NSString *urlString = @"http://people.csail.mit.edu/dway/file_upload.php";
 	
 	// setting up the request object now
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
@@ -148,8 +154,8 @@
     NSMutableData *body = [NSMutableData data];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@.jpg\"\r\n", labelText1] 
-                      dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"start%@middle%@end.jpg\"\r\n", labelText1, pointStringComplete] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSLog(@"start%@middle%@end.jpg", labelText1,pointStringComplete);
     [body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[NSData dataWithData:imageData]];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
