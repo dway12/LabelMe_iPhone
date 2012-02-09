@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioServices.h>
 #import "AnnotationViewController.h"
+#import "CreateAccountController.h"
 
 
-@interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate>
+@interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate, CreateAccountControllerDelegate>
 {
     
 
     AnnotationViewController *annotationViewController; //annotationView
+    
+    CreateAccountController *createAccountController;
+    
     
     //home screen buttons
 
@@ -24,22 +28,30 @@
     UIButton *Button3;
     
     UIView  *LabelMeView;
+    
+    UIButton *signInButton;
+    UIButton *createAccountButton;
+    
 }
 
 @property (nonatomic, retain) AnnotationViewController *annotationViewController;
+@property (nonatomic, retain) CreateAccountController *createAccountController;
 
 //home screen buttons
 @property (nonatomic, retain) IBOutlet UIButton *AnnotationButton;
-@property (nonatomic, retain) IBOutlet UIButton *Button2;
-@property (nonatomic, retain) IBOutlet UIButton *Button3;
+
+@property (nonatomic, retain) IBOutlet UIButton *signInButton;
+@property (nonatomic, retain) IBOutlet UIButton *createAccountButton;
 
 //labelmeImage
 @property (nonatomic, retain) IBOutlet UIView *LabelMeView;
 
 //home screen button actions
 -(IBAction)annotationAction:(id)sender;
--(IBAction)Button2Action:(id)sender;
--(IBAction)Button3Action:(id)sender;
+
+
+-(IBAction)signInAction:(id)sender;
+-(IBAction)createAccountAction:(id)sender;
 
 
 

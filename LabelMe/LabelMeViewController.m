@@ -11,7 +11,7 @@
 @implementation LabelMeViewController
 
 
-@synthesize AnnotationButton, Button2, Button3, annotationViewController, LabelMeView;
+@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController;
 
 #pragma mark -
 #pragma mark LabelMeViewController
@@ -21,15 +21,21 @@
     self.annotationViewController = 
             [[[AnnotationViewController alloc] initWithNibName:@"AnnotationView" bundle:nil] autorelease];
     
+    
+    self.createAccountController = 
+            [[[CreateAccountController alloc] initWithNibName:@"CreateAccountView" bundle:nil] autorelease];
+    
+    self.createAccountController.delegate = self;
     self.annotationViewController.delegate = self;
+
     
 }
 -(void)viewDidUnload
 {
     self.LabelMeView = nil;
     self.AnnotationButton = nil;
-    self.Button2 = nil;
-    self.Button3 = nil;
+    self.signInButton = nil;
+    self.createAccountButton = nil;
     self.annotationViewController = nil;
 }
 
@@ -40,8 +46,8 @@
     [annotationViewController release];
     [LabelMeView release];
     [AnnotationButton release];
-    [Button3 release];
-    [Button2 release];
+    [signInButton release];
+    [createAccountButton release];
     [super dealloc];
     
     
@@ -53,17 +59,14 @@
     
     
 }
--(IBAction)Button2Action:(id)sender
+-(IBAction)createAccountAction:(id)sender
+{
+    [self presentModalViewController:createAccountController animated:YES];
+}
+-(IBAction)signInAction:(id)sender
 {
     
-    
 }
--(IBAction)Button3Action:(id)sender
-{
-    
-    
-}
-
 
 #pragma mark -
 #pragma mark AnnotationViewDelegate
@@ -72,13 +75,13 @@
     
     [self dismissModalViewControllerAnimated:YES];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+
+#pragma mark -
+#pragma mark CreateAccountControllerDelegate
+-(void)didHitBackFromCreatingAccount
 {
-    // Drawing code
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
-*/
 
 @end

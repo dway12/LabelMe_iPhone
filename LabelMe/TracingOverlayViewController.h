@@ -7,34 +7,40 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BoxDrawView.h"
 
 
 
 @protocol TracingOverlayViewControllerDelegate;
 
-@interface TracingOverlayViewController : UIViewController <UINavigationControllerDelegate ,UITextFieldDelegate>
+@interface TracingOverlayViewController : UIViewController <UITextFieldDelegate>
 {
     id <TracingOverlayViewControllerDelegate> delegate;
 @private
     
-    
+    // buttons and text field
     UIBarButtonItem *doneTracingButton;
     UIBarButtonItem *cancelButton;
     
     UITextField *LabelerText;
     
-    
+    // image helper values
     UIImage *tracingPicture;
     UIImage *originalTracingPicture;
     
     UIImageView *tracingPictureView;
     
+    
+    //points for string data
     CGPoint *upperLeft;
     CGPoint *lowerRight;
     
     CGPoint locationUpperLeft;
     CGPoint locationLowerRight;
+    
     NSString *labelString;
+    
+    
     NSString *pointStringUpperLeft;
     NSString *pointStringUpperRight;
     NSString *pointStringLowerRight;
@@ -42,6 +48,28 @@
     NSString *pointStringComplete;
     
     double imageScaleFactor;
+    
+    //drawing box
+    
+//    IBOutlet UIImageView *cloud1;
+//    IBOutlet UIImageView *cloud2;
+//    IBOutlet UIImageView *cloud3;
+//    IBOutlet UIImageView *cloud4;
+    
+    CGPoint corner1;
+    CGPoint corner2;
+    CGPoint corner3;
+    CGPoint corner4;
+    
+    CGPoint *imagesArray;
+    
+    int currentIndex;
+    
+    IBOutlet BoxDrawView *boxDrawView;
+    
+    
+    
+    
     
     
 }
@@ -63,6 +91,11 @@
 @property (nonatomic, retain) id<TracingOverlayViewControllerDelegate> delegate;
 
 
+@property(nonatomic) int currentIndex;
+
+@property(nonatomic, retain) IBOutlet BoxDrawView *boxDrawView;
+
+
 
 
 -(IBAction)doneTracingAction:(id)sender;
@@ -79,6 +112,6 @@
 @end
 
 @protocol TracingOverlayViewControllerDelegate
--(void)finishedTracing:(UIImage*)pictureToSend:(NSString*)label:(NSString*)pointStringComplete;
+-(void)finishedTracing:(UIImage*)pictureToSend:(NSString*)labelText1:(NSString*)pointStringComplete;
 -(void)didHitCancel;
 @end

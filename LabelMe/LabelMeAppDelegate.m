@@ -10,8 +10,8 @@
 
 @implementation LabelMeAppDelegate
 
-@synthesize navController;
 @synthesize window = _window;
+@synthesize labelMeViewController = _labelMeViewController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -19,8 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [self.window addSubview:navController.view];
+    //[self.window addSubview:labelMeViewController.LabelMeView];
     [self.window makeKeyAndVisible];
+    
+    
 
     return YES;
 }
@@ -63,7 +65,6 @@
 
 - (void)dealloc
 {
-    [navController release];
     [_window release];
     [__managedObjectContext release];
     [__managedObjectModel release];

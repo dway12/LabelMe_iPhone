@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0D719C14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */; };
+		CD0D719F14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */; };
+		CD0D71A114E1C28200B12C38 /* glossy_button_blank_red_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */; };
+		CD0D71A314E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */; };
+		CD0D71A614E1C63D00B12C38 /* CreateAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0D71A514E1C63D00B12C38 /* CreateAccountController.m */; };
+		CD0D71A814E1C97100B12C38 /* CreateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */; };
 		CD18398914C8B042003BFC54 /* LabelMeImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD18398814C8B042003BFC54 /* LabelMeImage.jpg */; };
+		CD22C0C314D0730900404461 /* LabelMeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C014D0730900404461 /* LabelMeImage.png */; };
+		CD22C0C414D0730900404461 /* LabelMeImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C114D0730900404461 /* LabelMeImage1.jpg */; };
+		CD22C0C514D0730900404461 /* LabelMeImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C214D0730900404461 /* LabelMeImage2.jpg */; };
+		CD22C0C814D0751400404461 /* LabelMeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C714D0751400404461 /* LabelMeIcon.png */; };
+		CD22C0CA14D0753A00404461 /* LabelMeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C914D0753A00404461 /* LabelMeIcon.png */; };
+		CD22C0D114D0A04900404461 /* BoxDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD22C0D014D0A04900404461 /* BoxDrawView.m */; };
 		CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2819871448C01F00634D37 /* CameraOverlay.xib */; };
 		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
 		CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */; };
@@ -34,6 +46,10 @@
 		CDC4A9FD1433A5EE007660BB /* LabelMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */; };
 		CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE26979143652D400B200FE /* LabelMeViewController.m */; };
 		CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2697C1436542800B200FE /* CameraOverlayViewController.m */; };
+		CDE93D2714CF4E6400C4B50A /* Cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2314CF4E6400C4B50A /* Cloud1.png */; };
+		CDE93D2814CF4E6400C4B50A /* Cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2414CF4E6400C4B50A /* Cloud2.png */; };
+		CDE93D2914CF4E6400C4B50A /* Cloud3.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2514CF4E6400C4B50A /* Cloud3.png */; };
+		CDE93D2A14CF4E6400C4B50A /* Cloud4.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2614CF4E6400C4B50A /* Cloud4.png */; };
 		CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +64,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glossy_button_blank_black_rectangle.png; path = ../../../../Downloads/glossy_button_blank_black_rectangle.png; sourceTree = "<group>"; };
+		CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_green_rectangle.png; sourceTree = "<group>"; };
+		CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_red_rectangle.png; sourceTree = "<group>"; };
+		CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_blue_rectangle.png; sourceTree = "<group>"; };
+		CD0D71A414E1C63D00B12C38 /* CreateAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountController.h; sourceTree = "<group>"; };
+		CD0D71A514E1C63D00B12C38 /* CreateAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountController.m; sourceTree = "<group>"; };
+		CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountView.xib; sourceTree = "<group>"; };
 		CD18398814C8B042003BFC54 /* LabelMeImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage.jpg; sourceTree = "<group>"; };
+		CD22C0C014D0730900404461 /* LabelMeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeImage.png; sourceTree = "<group>"; };
+		CD22C0C114D0730900404461 /* LabelMeImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage1.jpg; sourceTree = "<group>"; };
+		CD22C0C214D0730900404461 /* LabelMeImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage2.jpg; sourceTree = "<group>"; };
+		CD22C0C714D0751400404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
+		CD22C0C914D0753A00404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
+		CD22C0CF14D0A04900404461 /* BoxDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDrawView.h; sourceTree = "<group>"; };
+		CD22C0D014D0A04900404461 /* BoxDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDrawView.m; sourceTree = "<group>"; };
 		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
 		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
@@ -83,6 +113,10 @@
 		CDE26979143652D400B200FE /* LabelMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelMeViewController.m; sourceTree = "<group>"; };
 		CDE2697B1436542800B200FE /* CameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayViewController.h; sourceTree = "<group>"; };
 		CDE2697C1436542800B200FE /* CameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayViewController.m; sourceTree = "<group>"; };
+		CDE93D2314CF4E6400C4B50A /* Cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud1.png; sourceTree = "<group>"; };
+		CDE93D2414CF4E6400C4B50A /* Cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud2.png; sourceTree = "<group>"; };
+		CDE93D2514CF4E6400C4B50A /* Cloud3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud3.png; sourceTree = "<group>"; };
+		CDE93D2614CF4E6400C4B50A /* Cloud4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud4.png; sourceTree = "<group>"; };
 		CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +150,7 @@
 		CDC4A9B21433A5ED007660BB = {
 			isa = PBXGroup;
 			children = (
+				CD22C0C914D0753A00404461 /* LabelMeIcon.png */,
 				CDC4A9C91433A5ED007660BB /* LabelMe */,
 				CDC4A9F41433A5EE007660BB /* LabelMeTests */,
 				CDC4A9C01433A5ED007660BB /* Frameworks */,
@@ -151,6 +186,9 @@
 				CDC4A9D31433A5EE007660BB /* LabelMeAppDelegate.m */,
 				CDE26978143652D400B200FE /* LabelMeViewController.h */,
 				CDE26979143652D400B200FE /* LabelMeViewController.m */,
+				CD0D71A414E1C63D00B12C38 /* CreateAccountController.h */,
+				CD0D71A514E1C63D00B12C38 /* CreateAccountController.m */,
+				CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */,
 				CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */,
 				CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */,
 				CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */,
@@ -159,6 +197,8 @@
 				CD2819871448C01F00634D37 /* CameraOverlay.xib */,
 				CD9CBD521455E54700F15024 /* TracingOverlayViewController.h */,
 				CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */,
+				CD22C0CF14D0A04900404461 /* BoxDrawView.h */,
+				CD22C0D014D0A04900404461 /* BoxDrawView.m */,
 				CD9CBD561455E58800F15024 /* TracingOverlayView.xib */,
 				CDC4A9D51433A5EE007660BB /* LabelMe.xcdatamodeld */,
 				CDC4A9D81433A5EE007660BB /* iPhone */,
@@ -172,9 +212,21 @@
 			isa = PBXGroup;
 			children = (
 				CDC4A9CB1433A5ED007660BB /* LabelMe-Info.plist */,
+				CD22C0C714D0751400404461 /* LabelMeIcon.png */,
+				CD22C0C014D0730900404461 /* LabelMeImage.png */,
+				CD22C0C114D0730900404461 /* LabelMeImage1.jpg */,
+				CD22C0C214D0730900404461 /* LabelMeImage2.jpg */,
 				CDC4A9CC1433A5ED007660BB /* InfoPlist.strings */,
 				CDC4A9CF1433A5ED007660BB /* main.m */,
 				CDC4A9D11433A5ED007660BB /* LabelMe-Prefix.pch */,
+				CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */,
+				CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */,
+				CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */,
+				CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */,
+				CDE93D2314CF4E6400C4B50A /* Cloud1.png */,
+				CDE93D2414CF4E6400C4B50A /* Cloud2.png */,
+				CDE93D2514CF4E6400C4B50A /* Cloud3.png */,
+				CDE93D2614CF4E6400C4B50A /* Cloud4.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -296,6 +348,20 @@
 				CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */,
 				CD9CBD571455E58800F15024 /* TracingOverlayView.xib in Resources */,
 				CD18398914C8B042003BFC54 /* LabelMeImage.jpg in Resources */,
+				CDE93D2714CF4E6400C4B50A /* Cloud1.png in Resources */,
+				CDE93D2814CF4E6400C4B50A /* Cloud2.png in Resources */,
+				CDE93D2914CF4E6400C4B50A /* Cloud3.png in Resources */,
+				CDE93D2A14CF4E6400C4B50A /* Cloud4.png in Resources */,
+				CD22C0C314D0730900404461 /* LabelMeImage.png in Resources */,
+				CD22C0C414D0730900404461 /* LabelMeImage1.jpg in Resources */,
+				CD22C0C514D0730900404461 /* LabelMeImage2.jpg in Resources */,
+				CD22C0C814D0751400404461 /* LabelMeIcon.png in Resources */,
+				CD22C0CA14D0753A00404461 /* LabelMeIcon.png in Resources */,
+				CD0D719C14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png in Resources */,
+				CD0D719F14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png in Resources */,
+				CD0D71A114E1C28200B12C38 /* glossy_button_blank_red_rectangle.png in Resources */,
+				CD0D71A314E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png in Resources */,
+				CD0D71A814E1C97100B12C38 /* CreateAccountView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +406,8 @@
 				CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */,
 				CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */,
 				CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */,
+				CD22C0D114D0A04900404461 /* BoxDrawView.m in Sources */,
+				CD0D71A614E1C63D00B12C38 /* CreateAccountController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

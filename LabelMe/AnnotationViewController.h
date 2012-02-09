@@ -13,9 +13,10 @@
 @protocol AnnotationViewControllerDelegate;
 
 
-@interface AnnotationViewController : UIViewController <UINavigationControllerDelegate, CameraOverlayViewControllerDelegate, TracingOverlayViewControllerDelegate>
+@interface AnnotationViewController : UIViewController < CameraOverlayViewControllerDelegate, TracingOverlayViewControllerDelegate>
 {
     id <AnnotationViewControllerDelegate> delegate;
+    
     CameraOverlayViewController *cameraOverlayViewController;
     
     
@@ -44,6 +45,8 @@
 -(IBAction)didHitBackButtonAction:(id)sender;
 -(IBAction)pictureModeButtonAction:(id)sender;
 -(IBAction)startTracing:(id)sender;
+
+-(void)rightToTrace;
 
 
 @end

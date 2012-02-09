@@ -35,6 +35,9 @@
     
 }
 
+
+
+
 -(void)dealloc
 {
     [takePictureButton release];
@@ -93,6 +96,12 @@
     
     
 }
+-(void)finishAndCancel
+{
+    [self.delegate didHitDone];
+    self.backButton.enabled = YES;
+    self.takePictureButton.enabled=YES;
+}
 
 #pragma mark -
 #pragma mark Camera Actions
@@ -100,7 +109,7 @@
 -(IBAction)done:(id)sender
 {
     
-    [self finishAndUpdate];
+    [self finishAndCancel];
 }
 
 -(IBAction)takePicture:(id)sender
@@ -129,6 +138,7 @@
     [self.delegate didFinishWithCamera];
     
 }
+
 
 @end
 

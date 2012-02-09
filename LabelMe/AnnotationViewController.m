@@ -94,6 +94,8 @@
 #pragma mark -
 #pragma mark CameraOverlayViewDelegate
 
+
+
 -(void)didTakePicture:(UIImage *)picture
 {
     
@@ -109,7 +111,6 @@
 }
 -(IBAction)startTracing:(id)sender
 {
-    NSLog(@"blahblahb");
 
     [self presentModalViewController:self.tracingOverlayViewController animated:YES];
     
@@ -119,8 +120,28 @@
 
     
     [self dismissModalViewControllerAnimated:YES];
+    [self rightToTrace];
 
 
+}
+
+-(void)didHitDone
+{
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)rightToTrace
+{
+    if (self.modalViewController) {        
+        [self performSelector:@selector(rightToTrace)
+                   withObject:nil
+                   afterDelay:0.1f];
+        return;
+    }
+    NSLog(@"what?!?!?");
+
+    [self presentModalViewController:self.tracingOverlayViewController animated:YES];
 }
 
 
@@ -131,6 +152,8 @@
   
 
     NSLog(@"settingupRequest");
+    NSLog(@"pointStringComplete: %@", pointStringComplete);
+   // NSLog(@"label text1: %@", labelText1);
     NSLog(@"the size of the image is %f, %f", pictureToSend.size.width, pictureToSend.size.height);
     UIGraphicsBeginImageContext(CGSizeMake(480, 690));
     [pictureToSend drawInRect:CGRectMake(0, 0, 480, 690)];
@@ -154,8 +177,9 @@
     NSMutableData *body = [NSMutableData data];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
+    NSLog(@"start%@middle%@end.jpg", labelText1, pointStringComplete);
+
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"start%@middle%@end.jpg\"\r\n", labelText1, pointStringComplete] dataUsingEncoding:NSUTF8StringEncoding]];
-    NSLog(@"start%@middle%@end.jpg", labelText1,pointStringComplete);
     [body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[NSData dataWithData:imageData]];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -166,6 +190,14 @@
 	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", returnString);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank you" 
+                                                    message:@"Picture and label uploaded successfully!"
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles: nil];
+    [alert show];
+    [alert release];
 
 
 

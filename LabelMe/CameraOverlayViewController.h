@@ -45,4 +45,6 @@
 @protocol CameraOverlayViewControllerDelegate
 - (void)didTakePicture:(UIImage *)picture;
 - (void)didFinishWithCamera;
+- (void)rightToTrace;
+- (void)didHitDone;
 @end

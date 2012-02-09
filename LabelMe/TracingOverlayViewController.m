@@ -7,45 +7,95 @@
 //
 
 #import "TracingOverlayViewController.h"
+#import "BoxDrawView.h"
 
 
 @implementation TracingOverlayViewController
 
-@synthesize doneTracingButton, cancelButton, delegate, tracingPictureView, tracingPicture, originalTracingPicture, LabelerText, labelString, pointStringComplete, imageScaleFactor;
+@synthesize doneTracingButton, cancelButton, delegate, tracingPictureView, tracingPicture, originalTracingPicture, LabelerText, labelString, pointStringComplete, imageScaleFactor,    currentIndex, boxDrawView;
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [[event allTouches] anyObject];
-
+	CGPoint location = [touch locationInView:touch.view];
     
-    if( upperLeft == nil && lowerRight == nil ){
-        locationUpperLeft = [touch locationInView:touch.view];
-
-        NSLog(@"upper Left:");
-        NSLog(@"%@", NSStringFromCGPoint(locationUpperLeft));
-
-        upperLeft = &locationUpperLeft;
-    }else if (upperLeft != nil && lowerRight == nil){
-        locationLowerRight = [touch locationInView:touch.view];
-
-        NSLog(@"lowerRight");
-        NSLog(@"%@", NSStringFromCGPoint(locationLowerRight));
-
-        lowerRight = &locationLowerRight;
+    currentIndex = 6;
+    float dist = 1000000;
+    float newdist;
+    
+    for (int i = 0; i<4 ;i++)
+    {
         
-        // create point string for embed, draw over picture
-        [self createPointString];
-        [self drawRect];
-    }else{
-        NSLog(@"clearingBox");
-        [self clearBox];
+        CGPoint tempPoint = imagesArray[i];
+        newdist = sqrt( pow((location.x-tempPoint.x),2) + pow((location.y-tempPoint.y),2) );
+
+        
+        if (newdist<dist)
+        {
+            dist = newdist;
+            currentIndex = i;
+            
+        }
+        
     }
     
-    
-	
+    NSLog(@"touch");
+
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	//[self touchesBegan:touches withEvent:event];
+    if (currentIndex != 6)
+    {
+        
+        UITouch *touch = [[event allTouches] anyObject];
+        CGPoint location = [touch locationInView:touch.view];
+        
+      //  NSLog(@"touch point: %@", NSStringFromCGPoint(location));
+      //  location.y = location.y  ;
+                     
+
+        if (currentIndex == 0)
+        {
+            imagesArray[0] = location;
+            imagesArray[1].y = location.y;
+            imagesArray[2].x = location.x;
+            locationUpperLeft = location;
+            
+        }else if( currentIndex == 1)
+        {
+            imagesArray[1] = location;
+            imagesArray[0].y = location.y;
+            imagesArray[3].x = location.x;
+            locationUpperLeft.y = location.y;
+            locationLowerRight.x = location.x;
+            
+        }else if (currentIndex == 2)
+        {
+            imagesArray[2] = location;
+            imagesArray[0].x = location.x;
+            imagesArray[3].y = location.y;
+            locationLowerRight.y = location.y;
+            locationUpperLeft.x = location.x;
+            
+            
+        }else if(currentIndex  == 3)
+        {
+            
+            imagesArray[3] = location;
+            imagesArray[2].y = location.y;
+            imagesArray[1].x = location.x;
+            locationLowerRight = location;
+            
+        }
+        //NSLog(@"%@", NSStringFromCGPoint(imagesArray[0]));
+        [boxDrawView setPoints:imagesArray];
+        [boxDrawView setNeedsDisplay];
+        
+    }    
+    
+}
+-(void)drawRect
+{
+
 }
 
 -(void)clearBox
@@ -55,59 +105,17 @@
     [self setPicture:originalTracingPicture];
 
 }
--(void)drawRect
-{
-    //draws rectangle
-    UIGraphicsBeginImageContext(self.view.bounds.size);	
-   // NSLog(@"%@", NSStringFromCGSize(self.view.bounds.size));
 
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    // flip orientation
-    CGContextScaleCTM(context, 1, -1);
-    CGContextRotateCTM(context, -3.14159265/2);
-    
-    CGContextDrawImage(context, CGRectMake(0, 0, 460, 320), self.tracingPicture.CGImage);
-    NSLog(@"drawing image");
-    
-    // drawing with a white stroke color
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
-    CGContextSetLineWidth(context, 20);
-    // drawing with a white fill color
-    //CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
-    // Add Filled Rectangle, 
-    CGContextRotateCTM(context, -3.14159265/2);
-    CGContextScaleCTM(context, -1, 1);
-    
-    CGContextBeginPath(context);
-    
-    CGContextMoveToPoint(context, upperLeft->x, upperLeft->y); //start point
-    CGContextAddLineToPoint(context, lowerRight->x, upperLeft->y);
-    CGContextAddLineToPoint(context, lowerRight->x, lowerRight->y);
-    CGContextAddLineToPoint(context, upperLeft->x, lowerRight->y); // end path
-    
-    CGContextClosePath(context); // close path
-    
-    CGContextSetLineWidth(context, 8.0); // this is set from now on until you explicitly change it
-    
-    CGContextStrokePath(context); // do actual stroking
-    
-    UIImage *screenshot1 = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    
-    [self setPicture:screenshot1];
-    
-}
 -(void)createPointString
 {
-    double upperLeftX = locationUpperLeft.x *imageScaleFactor;
-    double upperLeftY = locationUpperLeft.y *imageScaleFactor;
-    double lowerRightX = locationLowerRight.x *imageScaleFactor;
-    double lowerRightY = locationLowerRight.y *imageScaleFactor;
-    pointStringUpperLeft = [NSString stringWithFormat:@"{%.02f, %.02f}",upperLeftX,upperLeftY];
-    pointStringLowerRight = [NSString stringWithFormat:@"{%.02f, %.02f}",lowerRightX, lowerRightY];
+    
+    // 
+    int upperLeftX = locationUpperLeft.x *imageScaleFactor;
+    int upperLeftY = locationUpperLeft.y *imageScaleFactor * 1.13;
+    int lowerRightX = locationLowerRight.x *imageScaleFactor;
+    int lowerRightY = locationLowerRight.y *imageScaleFactor* 1.13;
+    pointStringUpperLeft = [NSString stringWithFormat:@"{%i, %i}",upperLeftX,upperLeftY];
+    pointStringLowerRight = [NSString stringWithFormat:@"{%i, %i}",lowerRightX, lowerRightY];
 
     [pointStringComplete autorelease];
     pointStringComplete = [[NSString stringWithFormat:@"%@%@",pointStringUpperLeft, pointStringLowerRight] retain];
@@ -121,9 +129,34 @@
 -(void)viewDidLoad
 {
 
+    [super viewDidLoad];
+    
+    imagesArray = malloc(sizeof(CGPoint)*4);
+    imagesArray[0] = CGPointMake(100, 100);
+    imagesArray[1] = CGPointMake(300, 100);
+    imagesArray[2] = CGPointMake(100, 300);
+    imagesArray[3] = CGPointMake(300, 300);
+    
+    locationLowerRight = imagesArray[3];
+    locationUpperLeft = imagesArray[0];
+    
+    
+    boxDrawView = [[BoxDrawView alloc] initWithFrame:CGRectMake(0, 45, 320, 460)];
+    [self.view addSubview:self.boxDrawView];
+    [boxDrawView setPoints:imagesArray];
+    
+    
+    NSLog(@"set points");
+    
+    
     self.tracingPictureView.image = tracingPicture;
     //[LabelTextFieldItem initWithCustomView:LabelerText];
     self.imageScaleFactor = 1.5;
+    
+    
+
+    
+
 
 }
 
@@ -147,6 +180,9 @@
     [LabelerText release];
     [pointStringComplete release];
     [labelString release];
+    [labelString release];
+    [boxDrawView release];
+    free(imagesArray);
     [super release];
     
     
@@ -157,6 +193,8 @@
     self->tracingPicture = picture;
     self.tracingPictureView.image = picture;
     NSLog(@"set ori pic");
+    //self.boxDrawView.backgroundColor= [UIColor colorWithPatternImage:originalTracingPicture];
+
     
 }
 -(void)setPicture:(UIImage*)picture
@@ -168,38 +206,7 @@
     NSLog(@"set picture");
 }
 
-//- (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect
-//{
-//    //create a context to do our clipping in
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-//    
-//    //create a rect with the size we want to crop the image to
-//    //the X and Y here are zero so we start at the beginning of our
-//    //newly created context
-//    CGRect clippedRect = CGRectMake(0, 0, rect.size.width, rect.size.height);
-//    CGContextClipToRect( currentContext, clippedRect);
-//    
-//    //create a rect equivalent to the full size of the image
-//    //offset the rect by the X and Y we want to start the crop
-//    //from in order to cut off anything before them
-//    CGRect drawRect = CGRectMake(rect.origin.x * -1,
-//                                 rect.origin.y * -1,
-//                                 imageToCrop.size.width,
-//                                 imageToCrop.size.height);
-//    
-//    //draw the image to our clipped context using our offset rect
-//    CGContextDrawImage(currentContext, drawRect, imageToCrop.CGImage);
-//    
-//    //pull the image from our cropped context
-//    UIImage *cropped = UIGraphicsGetImageFromCurrentImageContext();
-//    
-//    //pop the context to get back to the default
-//    UIGraphicsEndImageContext();
-//    
-//    //Note: this is autoreleased
-//    return cropped;
-//}
+
 
 #pragma mark -
 #pragma mark tracing actions
@@ -207,7 +214,7 @@
 -(IBAction)doneTracingAction:(id)sender
 {
     
-    NSLog(@"doneTracingAction clicked");
+    [self createPointString];
     [self.delegate finishedTracing:originalTracingPicture:labelString:pointStringComplete];
     
 }
@@ -232,8 +239,11 @@
 {
     [theLabelerText resignFirstResponder];
     NSLog(@"did hit enter");
-    NSLog(@"%@", theLabelerText.text);
     labelString = theLabelerText.text;
+    
+    labelString = [labelString retain];
+    NSLog(@"'%@'", labelString);
+
     
     return YES;
 }
