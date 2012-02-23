@@ -109,7 +109,7 @@
 -(void)createPointString
 {
     
-    // 
+    // had to modify the y value image scale factor 
     int upperLeftX = locationUpperLeft.x *imageScaleFactor;
     int upperLeftY = locationUpperLeft.y *imageScaleFactor * 1.13;
     int lowerRightX = locationLowerRight.x *imageScaleFactor;
@@ -146,11 +146,10 @@
     [boxDrawView setPoints:imagesArray];
     
     
-    NSLog(@"set points");
     
     
     self.tracingPictureView.image = tracingPicture;
-    //[LabelTextFieldItem initWithCustomView:LabelerText];
+    
     self.imageScaleFactor = 1.5;
     
     
