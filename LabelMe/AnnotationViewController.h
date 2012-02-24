@@ -47,7 +47,7 @@
 -(IBAction)startTracing:(id)sender;
 
 -(void)rightToTrace;
--(void)finishedTracing: (UIImage*) pictureToSend: (NSString*) labelText1: (NSString*) pointStringComplete
+-(void)finishedTracing: (UIImage*) pictureToSend: (NSString*) labelText1: (NSString*) pointStringComplete;
 
 
 @end

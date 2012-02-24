@@ -10,4 +10,13 @@
 
 @implementation ServerConnectionController
 
+    
++(void)sendJPGtoServer:(UIImage*)pictureToSend
+{
+    
+}
+
+
+
+
 @end

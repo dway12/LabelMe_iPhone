@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CD0C3B7C14F7F706002E832A /* ServerConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0C3B7B14F7F706002E832A /* ServerConnectionController.m */; };
-		CD0D719C14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */; };
 		CD0D719F14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */; };
 		CD0D71A114E1C28200B12C38 /* glossy_button_blank_red_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */; };
 		CD0D71A314E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */; };
@@ -52,6 +51,7 @@
 		CDE93D2914CF4E6400C4B50A /* Cloud3.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2514CF4E6400C4B50A /* Cloud3.png */; };
 		CDE93D2A14CF4E6400C4B50A /* Cloud4.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2614CF4E6400C4B50A /* Cloud4.png */; };
 		CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */; };
+		CDF85ECF14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF85ECE14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 /* Begin PBXFileReference section */
 		CD0C3B7A14F7F706002E832A /* ServerConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnectionController.h; sourceTree = "<group>"; };
 		CD0C3B7B14F7F706002E832A /* ServerConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnectionController.m; sourceTree = "<group>"; };
-		CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glossy_button_blank_black_rectangle.png; path = ../../../../Downloads/glossy_button_blank_black_rectangle.png; sourceTree = "<group>"; };
 		CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_green_rectangle.png; sourceTree = "<group>"; };
 		CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_red_rectangle.png; sourceTree = "<group>"; };
 		CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_blue_rectangle.png; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		CDE93D2514CF4E6400C4B50A /* Cloud3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud3.png; sourceTree = "<group>"; };
 		CDE93D2614CF4E6400C4B50A /* Cloud4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud4.png; sourceTree = "<group>"; };
 		CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
+		CDF85ECE14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_black_rectangle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +227,7 @@
 				CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */,
 				CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */,
 				CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */,
-				CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */,
+				CDF85ECE14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png */,
 				CDE93D2314CF4E6400C4B50A /* Cloud1.png */,
 				CDE93D2414CF4E6400C4B50A /* Cloud2.png */,
 				CDE93D2514CF4E6400C4B50A /* Cloud3.png */,
@@ -362,11 +362,11 @@
 				CD22C0C514D0730900404461 /* LabelMeImage2.jpg in Resources */,
 				CD22C0C814D0751400404461 /* LabelMeIcon.png in Resources */,
 				CD22C0CA14D0753A00404461 /* LabelMeIcon.png in Resources */,
-				CD0D719C14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png in Resources */,
 				CD0D719F14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png in Resources */,
 				CD0D71A114E1C28200B12C38 /* glossy_button_blank_red_rectangle.png in Resources */,
 				CD0D71A314E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png in Resources */,
 				CD0D71A814E1C97100B12C38 /* CreateAccountView.xib in Resources */,
+				CDF85ECF14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
