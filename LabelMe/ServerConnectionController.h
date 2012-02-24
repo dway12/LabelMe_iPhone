@@ -11,10 +11,14 @@
 @interface ServerConnectionController : NSObject
 {
     
-    
+    NSString* serverJPGReceiverURL;
     
 }
 +(void)sendJPGtoServer:(UIImage*)pictureToSend;
+-(void)initWithDefaultReceivers;
+
+
+@property (retain, readwrite) NSString* serverJPGReceiverURL;
 
 
 

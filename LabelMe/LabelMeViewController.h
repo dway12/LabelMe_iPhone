@@ -11,6 +11,8 @@
 #import "AnnotationViewController.h"
 #import "CreateAccountController.h"
 
+@class ServerConnectionController;
+
 
 @interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate, CreateAccountControllerDelegate>
 {
@@ -32,7 +34,11 @@
     UIButton *signInButton;
     UIButton *createAccountButton;
     
+    ServerConnectionController *serverConnectionController;
+    
 }
+
+@property (nonatomic, retain) ServerConnectionController *serverConnectionController;
 
 @property (nonatomic, retain) AnnotationViewController *annotationViewController;
 @property (nonatomic, retain) CreateAccountController *createAccountController;

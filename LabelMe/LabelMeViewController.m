@@ -8,10 +8,11 @@
 
 #import "LabelMeViewController.h"
 
+
 @implementation LabelMeViewController
 
 
-@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController;
+@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController, serverConnectionController;
 
 #pragma mark -
 #pragma mark LabelMeViewController
@@ -27,7 +28,12 @@
     
     self.createAccountController.delegate = self;
     self.annotationViewController.delegate = self;
-
+    
+    
+    
+    
+    self.serverConnectionController = [[[ServerConnectionController alloc] initWithDefaultReceivers bundle: nil] autorelease];
+    
     
 }
 -(void)viewDidUnload
