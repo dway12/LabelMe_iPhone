@@ -14,7 +14,10 @@
     
     
 }
-+sendJPGtoServer
++(void)sendJPGtoServer:(UIImage*)pictureToSend;
+
+
+
 
 
 @end
