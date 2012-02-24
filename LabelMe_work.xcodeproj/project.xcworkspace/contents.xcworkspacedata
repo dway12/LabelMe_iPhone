@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LabelMe.xcodeproj">
+      location = "self:LabelMe_work.xcodeproj">
    </FileRef>
 </Workspace>

@@ -15,8 +15,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
                BuildableName = "LabelMe.app"
-               BlueprintName = "LabelMe"
-               ReferencedContainer = "container:LabelMe.xcodeproj">
+               BlueprintName = "LabelMe_work"
+               ReferencedContainer = "container:LabelMe_work.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,25 +33,36 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CDC4A9EA1433A5EE007660BB"
                BuildableName = "LabelMeTests.octest"
-               BlueprintName = "LabelMeTests"
-               ReferencedContainer = "container:LabelMe.xcodeproj">
+               BlueprintName = "LabelMe_workTests"
+               ReferencedContainer = "container:LabelMe_work.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
+            BuildableName = "LabelMe.app"
+            BlueprintName = "LabelMe_work"
+            ReferencedContainer = "container:LabelMe_work.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug">
+      buildConfiguration = "Debug"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
             BuildableName = "LabelMe.app"
-            BlueprintName = "LabelMe"
-            ReferencedContainer = "container:LabelMe.xcodeproj">
+            BlueprintName = "LabelMe_work"
+            ReferencedContainer = "container:LabelMe_work.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -61,14 +72,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release">
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
             BuildableName = "LabelMe.app"
-            BlueprintName = "LabelMe"
-            ReferencedContainer = "container:LabelMe.xcodeproj">
+            BlueprintName = "LabelMe_work"
+            ReferencedContainer = "container:LabelMe_work.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

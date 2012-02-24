@@ -88,15 +88,15 @@
 		CD9CBD521455E54700F15024 /* TracingOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracingOverlayViewController.h; sourceTree = "<group>"; };
 		CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracingOverlayViewController.m; sourceTree = "<group>"; };
 		CD9CBD561455E58800F15024 /* TracingOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TracingOverlayView.xib; sourceTree = "<group>"; };
-		CDC4A9BD1433A5ED007660BB /* LabelMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC4A9BD1433A5ED007660BB /* LabelMe_work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMe_work.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC4A9C11433A5ED007660BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDC4A9C31433A5ED007660BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDC4A9C51433A5ED007660BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CDC4A9C71433A5ED007660BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		CDC4A9CB1433A5ED007660BB /* LabelMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LabelMe-Info.plist"; sourceTree = "<group>"; };
+		CDC4A9CB1433A5ED007660BB /* LabelMe_work-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LabelMe_work-Info.plist"; sourceTree = "<group>"; };
 		CDC4A9CD1433A5ED007660BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDC4A9CF1433A5ED007660BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CDC4A9D11433A5ED007660BB /* LabelMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LabelMe-Prefix.pch"; sourceTree = "<group>"; };
+		CDC4A9D11433A5ED007660BB /* LabelMe_work-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LabelMe_work-Prefix.pch"; sourceTree = "<group>"; };
 		CDC4A9D21433A5ED007660BB /* LabelMeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelMeAppDelegate.h; sourceTree = "<group>"; };
 		CDC4A9D31433A5EE007660BB /* LabelMeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelMeAppDelegate.m; sourceTree = "<group>"; };
 		CDC4A9D61433A5EE007660BB /* LabelMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LabelMe.xcdatamodel; sourceTree = "<group>"; };
@@ -106,9 +106,9 @@
 		CDC4A9E01433A5EE007660BB /* LabelMeAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LabelMeAppDelegate_iPad.h; path = iPad/LabelMeAppDelegate_iPad.h; sourceTree = "<group>"; };
 		CDC4A9E11433A5EE007660BB /* LabelMeAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LabelMeAppDelegate_iPad.m; path = iPad/LabelMeAppDelegate_iPad.m; sourceTree = "<group>"; };
 		CDC4A9E41433A5EE007660BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
-		CDC4A9EB1433A5EE007660BB /* LabelMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabelMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC4A9EB1433A5EE007660BB /* LabelMe_workTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabelMe_workTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC4A9EC1433A5EE007660BB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		CDC4A9F61433A5EE007660BB /* LabelMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LabelMeTests-Info.plist"; sourceTree = "<group>"; };
+		CDC4A9F61433A5EE007660BB /* LabelMe_workTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LabelMe_workTests-Info.plist"; sourceTree = "<group>"; };
 		CDC4A9F81433A5EE007660BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDC4A9FA1433A5EE007660BB /* LabelMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelMeTests.h; sourceTree = "<group>"; };
 		CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelMeTests.m; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 		CDC4A9BE1433A5ED007660BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDC4A9BD1433A5ED007660BB /* LabelMe.app */,
-				CDC4A9EB1433A5EE007660BB /* LabelMeTests.octest */,
+				CDC4A9BD1433A5ED007660BB /* LabelMe_work.app */,
+				CDC4A9EB1433A5EE007660BB /* LabelMe_workTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,14 +216,14 @@
 		CDC4A9CA1433A5ED007660BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDC4A9CB1433A5ED007660BB /* LabelMe-Info.plist */,
+				CDC4A9CB1433A5ED007660BB /* LabelMe_work-Info.plist */,
 				CD22C0C714D0751400404461 /* LabelMeIcon.png */,
 				CD22C0C014D0730900404461 /* LabelMeImage.png */,
 				CD22C0C114D0730900404461 /* LabelMeImage1.jpg */,
 				CD22C0C214D0730900404461 /* LabelMeImage2.jpg */,
 				CDC4A9CC1433A5ED007660BB /* InfoPlist.strings */,
 				CDC4A9CF1433A5ED007660BB /* main.m */,
-				CDC4A9D11433A5ED007660BB /* LabelMe-Prefix.pch */,
+				CDC4A9D11433A5ED007660BB /* LabelMe_work-Prefix.pch */,
 				CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */,
 				CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */,
 				CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */,
@@ -270,7 +270,7 @@
 		CDC4A9F51433A5EE007660BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDC4A9F61433A5EE007660BB /* LabelMeTests-Info.plist */,
+				CDC4A9F61433A5EE007660BB /* LabelMe_workTests-Info.plist */,
 				CDC4A9F71433A5EE007660BB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -279,9 +279,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDC4A9BC1433A5ED007660BB /* LabelMe */ = {
+		CDC4A9BC1433A5ED007660BB /* LabelMe_work */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDC4AA001433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMe" */;
+			buildConfigurationList = CDC4AA001433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMe_work" */;
 			buildPhases = (
 				CDC4A9B91433A5ED007660BB /* Sources */,
 				CDC4A9BA1433A5ED007660BB /* Frameworks */,
@@ -291,14 +291,14 @@
 			);
 			dependencies = (
 			);
-			name = LabelMe;
+			name = LabelMe_work;
 			productName = LabelMe;
-			productReference = CDC4A9BD1433A5ED007660BB /* LabelMe.app */;
+			productReference = CDC4A9BD1433A5ED007660BB /* LabelMe_work.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CDC4A9EA1433A5EE007660BB /* LabelMeTests */ = {
+		CDC4A9EA1433A5EE007660BB /* LabelMe_workTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDC4AA031433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMeTests" */;
+			buildConfigurationList = CDC4AA031433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMe_workTests" */;
 			buildPhases = (
 				CDC4A9E61433A5EE007660BB /* Sources */,
 				CDC4A9E71433A5EE007660BB /* Frameworks */,
@@ -310,9 +310,9 @@
 			dependencies = (
 				CDC4A9F31433A5EE007660BB /* PBXTargetDependency */,
 			);
-			name = LabelMeTests;
+			name = LabelMe_workTests;
 			productName = LabelMeTests;
-			productReference = CDC4A9EB1433A5EE007660BB /* LabelMeTests.octest */;
+			productReference = CDC4A9EB1433A5EE007660BB /* LabelMe_workTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -323,7 +323,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = CDC4A9B71433A5ED007660BB /* Build configuration list for PBXProject "LabelMe" */;
+			buildConfigurationList = CDC4A9B71433A5ED007660BB /* Build configuration list for PBXProject "LabelMe_work" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -335,8 +335,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDC4A9BC1433A5ED007660BB /* LabelMe */,
-				CDC4A9EA1433A5EE007660BB /* LabelMeTests */,
+				CDC4A9BC1433A5ED007660BB /* LabelMe_work */,
+				CDC4A9EA1433A5EE007660BB /* LabelMe_workTests */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +430,7 @@
 /* Begin PBXTargetDependency section */
 		CDC4A9F31433A5EE007660BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CDC4A9BC1433A5ED007660BB /* LabelMe */;
+			target = CDC4A9BC1433A5ED007660BB /* LabelMe_work */;
 			targetProxy = CDC4A9F21433A5EE007660BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -520,10 +520,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LabelMe/LabelMe-Prefix.pch";
+				GCC_PREFIX_HEADER = "LabelMe/LabelMe_work-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "LabelMe/LabelMe-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LabelMe/LabelMe_work-Info.plist";
+				PRODUCT_NAME = LabelMe_work;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,10 +532,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LabelMe/LabelMe-Prefix.pch";
+				GCC_PREFIX_HEADER = "LabelMe/LabelMe_work-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "LabelMe/LabelMe-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LabelMe/LabelMe_work-Info.plist";
+				PRODUCT_NAME = LabelMe_work;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -551,8 +551,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LabelMe/LabelMe-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "LabelMeTests/LabelMeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LabelMeTests/LabelMe_workTests-Info.plist";
+				PRODUCT_NAME = LabelMe_workTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -569,8 +569,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LabelMe/LabelMe-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "LabelMeTests/LabelMeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LabelMeTests/LabelMe_workTests-Info.plist";
+				PRODUCT_NAME = LabelMe_workTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -579,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CDC4A9B71433A5ED007660BB /* Build configuration list for PBXProject "LabelMe" */ = {
+		CDC4A9B71433A5ED007660BB /* Build configuration list for PBXProject "LabelMe_work" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDC4A9FE1433A5EE007660BB /* Debug */,
@@ -588,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDC4AA001433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMe" */ = {
+		CDC4AA001433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMe_work" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDC4AA011433A5EE007660BB /* Debug */,
@@ -597,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDC4AA031433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMeTests" */ = {
+		CDC4AA031433A5EE007660BB /* Build configuration list for PBXNativeTarget "LabelMe_workTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDC4AA041433A5EE007660BB /* Debug */,
