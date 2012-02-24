@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface ServerConnectionController : NSObject
+{
+    
+    
+    
+}
++sendJPGtoServer
+
 
 @end

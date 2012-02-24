@@ -63,7 +63,7 @@
     [self animateTextField: textField up: NO];
 }
 
-- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+- (void) animateTextField: (UITextField*)textField up: (BOOL) up
 {
     const int movementDistance = 120; // tweak as needed
     const float movementDuration = 0.3f; // tweak as needed
@@ -131,11 +131,11 @@
     }
     else if (!usernameValid & passwordValid & emailValid)
     {
-        [self showInvalidFieldAlert:@"The username must contain alphanumeric numbers only!" :@"Choose a different username"];
+        [self showInvalidFieldAlert:@"The username must contain alphanumeric numbers only!" :@"Choose a different username."];
     }
     else if (usernameValid & !passwordValid & emailValid)
     {
-        [ self showInvalidFieldAlert:@"The password must contain alphanumeric numbers only!" :@"Choose a different password"];
+        [ self showInvalidFieldAlert:@"The password must contain alphanumeric numbers only!" :@"Choose a different password."];
     }
     else if( usernameValid & passwordValid & !emailValid)
     {
@@ -143,15 +143,15 @@
     }
     else if ( !usernameValid & !passwordValid & emailValid)
     {
-        [self showInvalidFieldAlert:@"These fields must be alphanumeric!" :@"Choose a different username and password"];
+        [self showInvalidFieldAlert:@"These fields must be alphanumeric!" :@"Choose a different username and password."];
     }
     else if ( !usernameValid & passwordValid & !emailValid)
     {
-        [self showInvalidFieldAlert:@"The username must be alphanumeric and the email address must be in proper form." :@"Try a different username and email address"];
+        [self showInvalidFieldAlert:@"The username must be alphanumeric and the email address must be in proper form." :@"Try a different username and email address."];
     }
     else if ( usernameValid & !passwordValid & !emailValid)
     {
-        [self showInvalidFieldAlert:@"The password must be alphanumberic and the email address must be in proper form." :@"Try a different password and email address"];
+        [self showInvalidFieldAlert:@"The password must be alphanumberic and the email address must be in proper form." :@"Try a different password and email address."];
     }
     else if( !usernameValid * !passwordValid & !emailValid)
     {

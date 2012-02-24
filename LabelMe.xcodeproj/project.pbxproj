@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0C3B7C14F7F706002E832A /* ServerConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0C3B7B14F7F706002E832A /* ServerConnectionController.m */; };
 		CD0D719C14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */; };
 		CD0D719F14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */; };
 		CD0D71A114E1C28200B12C38 /* glossy_button_blank_red_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */; };
@@ -64,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0C3B7A14F7F706002E832A /* ServerConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnectionController.h; sourceTree = "<group>"; };
+		CD0C3B7B14F7F706002E832A /* ServerConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnectionController.m; sourceTree = "<group>"; };
 		CD0D719B14E1BE3800B12C38 /* glossy_button_blank_black_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glossy_button_blank_black_rectangle.png; path = ../../../../Downloads/glossy_button_blank_black_rectangle.png; sourceTree = "<group>"; };
 		CD0D719E14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_green_rectangle.png; sourceTree = "<group>"; };
 		CD0D71A014E1C28200B12C38 /* glossy_button_blank_red_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_red_rectangle.png; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */,
 				CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */,
 				CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */,
+				CD0C3B7A14F7F706002E832A /* ServerConnectionController.h */,
+				CD0C3B7B14F7F706002E832A /* ServerConnectionController.m */,
 				CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */,
 				CDE2697B1436542800B200FE /* CameraOverlayViewController.h */,
 				CDE2697C1436542800B200FE /* CameraOverlayViewController.m */,
@@ -408,6 +413,7 @@
 				CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */,
 				CD22C0D114D0A04900404461 /* BoxDrawView.m in Sources */,
 				CD0D71A614E1C63D00B12C38 /* CreateAccountController.m in Sources */,
+				CD0C3B7C14F7F706002E832A /* ServerConnectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
