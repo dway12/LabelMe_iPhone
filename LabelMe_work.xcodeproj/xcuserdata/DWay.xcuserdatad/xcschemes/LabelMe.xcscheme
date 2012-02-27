@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
-               BuildableName = "LabelMe.app"
+               BuildableName = "LabelMe_work.app"
                BlueprintName = "LabelMe_work"
                ReferencedContainer = "container:LabelMe_work.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CDC4A9EA1433A5EE007660BB"
-               BuildableName = "LabelMeTests.octest"
+               BuildableName = "LabelMe_workTests.octest"
                BlueprintName = "LabelMe_workTests"
                ReferencedContainer = "container:LabelMe_work.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
-            BuildableName = "LabelMe.app"
+            BuildableName = "LabelMe_work.app"
             BlueprintName = "LabelMe_work"
             ReferencedContainer = "container:LabelMe_work.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
-            BuildableName = "LabelMe.app"
+            BuildableName = "LabelMe_work.app"
             BlueprintName = "LabelMe_work"
             ReferencedContainer = "container:LabelMe_work.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDC4A9BC1433A5ED007660BB"
-            BuildableName = "LabelMe.app"
+            BuildableName = "LabelMe_work.app"
             BlueprintName = "LabelMe_work"
             ReferencedContainer = "container:LabelMe_work.xcodeproj">
          </BuildableReference>

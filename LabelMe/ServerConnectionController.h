@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ServerConnectionController : NSObject
+@interface ServerConnectionController : NSObject <NSStreamDelegate>
 {
     
     NSString* serverJPGReceiverURL;

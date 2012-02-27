@@ -32,7 +32,7 @@
     
     
     
-    self.serverConnectionController = [[[ServerConnectionController alloc] initWithDefaultReceivers bundle: nil] autorelease];
+    self.serverConnectionController = [[[ServerConnectionController alloc] initWithDefaultReceivers] autorelease];
     
     
 }
