@@ -609,7 +609,7 @@ static NSString * kDefaultPostURLText = @"";
 
 #pragma mark * Actions
 
-- (IBAction)sendAction:(UIView *)sender
+- (void)sendAction:(UIView *)sender
 {
     assert( [sender isKindOfClass:[UIView class]] );
     
@@ -625,94 +625,21 @@ static NSString * kDefaultPostURLText = @"";
     }
 }
 
-- (IBAction)cancelAction:(id)sender
+- (void)cancelAction:(id)sender
 {
 #pragma unused(sender)
     [self _stopSendWithStatus:@"Cancelled"];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-// A delegate method called by the URL text field when the editing is complete. 
-// We save the current value of the field in our settings.
-{
-#pragma unused(textField)
-    NSString *  newValue;
-    NSString *  oldValue;
-    
-//    assert(textField == self.urlText);
-    
-//    newValue = self.urlText.text;
-    oldValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"PostURLText"];
-    
-    // Save the URL text if there is no pre-existing setting and it's not our 
-    // default value, or if there is a pre-existing default and the new value 
-    // is different.
-    
-    if (   ((oldValue == nil) && ! [newValue isEqual:kDefaultPostURLText] ) 
-        || ((oldValue != nil) && ! [newValue isEqual:oldValue] ) ) {
-        [[NSUserDefaults standardUserDefaults] setObject:newValue forKey:@"PostURLText"];
-    }    
-}
 
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField
-//// A delegate method called by the URL text field when the user taps the Return 
-//// key.  We just dismiss the keyboard.
-//{
-//#pragma unused(textField)
-//    assert(textField == self.urlText);
-//    [self.urlText resignFirstResponder];
-//    return NO;
-//}
 
-#pragma mark * View controller boilerplate
 
-//@synthesize urlText           = _urlText;
-//@synthesize statusLabel       = _statusLabel;
-//@synthesize activityIndicator = _activityIndicator;
-//@synthesize cancelButton      = _cancelButton;
-
-//- (void)viewDidLoad
-//{
-//    NSString *  currentURLText;
-//    
-//    [super viewDidLoad];
-////    assert(self.urlText != nil);
-////    assert(self.statusLabel != nil);
-////    assert(self.activityIndicator != nil);
-////    assert(self.cancelButton != nil);
-//    
-//    // Set up the URL field to be the last value we saved (or the default value 
-//    // if we have none).
-//    
-//    currentURLText = [[NSUserDefaults standardUserDefaults] stringForKey:@"PostURLText"];
-//    if (currentURLText == nil) {
-//        currentURLText = kDefaultPostURLText;
-//    }
-//    self.urlText.text = currentURLText;
-//    
-//    self.activityIndicator.hidden = YES;
-//    self.statusLabel.text = @"Tap a picture to start the POST";
-//    self.cancelButton.enabled = NO;
-//}
-
-//- (void)viewDidUnload
-//{
-//    [super viewDidUnload];
-//    
-//    self.urlText = nil;
-//    self.statusLabel = nil;
-//    self.activityIndicator = nil;
-//    self.cancelButton = nil;
-//}
 
 - (void)dealloc
 {
     [self _stopSendWithStatus:@"Stopped"];
     
-//    [self->_urlText release];
-//    [self->_statusLabel release];
-//    [self->_activityIndicator release];
-//    [self->_cancelButton release];
+
     
     [super dealloc];
 }

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define myAppDelegate [[UIApplication sharedApplication] delegate] 
+
+
 @protocol CreateAccountControllerDelegate;
 
 @interface CreateAccountController : UIViewController <UITextFieldDelegate>

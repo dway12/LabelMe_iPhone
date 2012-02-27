@@ -7,6 +7,8 @@
 //
 
 #import "LabelMeViewController.h"
+#import "ServerConnectionController.h"
+
 
 
 @implementation LabelMeViewController
@@ -32,7 +34,8 @@
     
     
     
-    self.serverConnectionController = [[[ServerConnectionController alloc] initWithDefaultReceivers] autorelease];
+    self.serverConnectionController = [[ServerConnectionController alloc] autorelease];
+    [self.serverConnectionController initWithDefaultReceivers];
     
     
 }

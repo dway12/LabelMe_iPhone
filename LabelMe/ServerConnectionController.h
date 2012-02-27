@@ -8,12 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ServerConnectionController : NSObject <NSStreamDelegate>
 {
     
     NSString* serverJPGReceiverURL;
     
+    NSURLConnection *           _connection;
+    NSData *                    _bodyPrefixData;
+    NSInputStream *             _fileStream;
+    NSData *                    _bodySuffixData;
+    NSOutputStream *            _producerStream;
+    NSInputStream *             _consumerStream;
+    const uint8_t *             _buffer;
+    uint8_t *                   _bufferOnHeap;
+    size_t                      _bufferOffset;
+    size_t                      _bufferLimit;
+    
 }
+
+
 +(void)sendJPGtoServer:(UIImage*)pictureToSend;
 -(void)initWithDefaultReceivers;
 
