@@ -28,6 +28,7 @@
 -(void)viewDidUnload
 {
     backButton = nil;
+    createAccountButton = nil;
     usernameTextField = nil;
     emailTextField = nil;
     passwordTextField = nil;

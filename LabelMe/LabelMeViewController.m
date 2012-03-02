@@ -13,7 +13,7 @@
 @implementation LabelMeViewController
 
 
-@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController;
+@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController, signInController;
 
 #pragma mark -
 #pragma mark LabelMeViewController
@@ -26,7 +26,8 @@
     
     self.createAccountController = 
             [[[CreateAccountController alloc] initWithNibName:@"CreateAccountView" bundle:nil] autorelease];
-    
+    self.signInController = 
+            [[[SignInController alloc] initWithNibName:@"SignInController" bundle:nil] autorelease];
     self.createAccountController.delegate = self;
     self.annotationViewController.delegate = self;
     
@@ -73,7 +74,7 @@
 }
 -(IBAction)signInAction:(id)sender
 {
-    
+    [self presentModalViewController:signInController animated:YES];
 }
 
 #pragma mark -
@@ -92,5 +93,10 @@
     
     [self dismissModalViewControllerAnimated:YES];
 }
-
+#pragma mark - 
+#pragma mark SignInControllerDelegate
+-(void)didHitBackFromSignInController
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end

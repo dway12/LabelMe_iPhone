@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "AnnotationViewController.h"
 #import "CreateAccountController.h"
+#import "SignInController.h"
 
 
 
@@ -22,7 +23,7 @@
     
     CreateAccountController *createAccountController;
     
-    
+    SignInController *signInController;
     //home screen buttons
 
     UIButton *AnnotationButton;
@@ -40,6 +41,7 @@
 
 @property (nonatomic, retain) AnnotationViewController *annotationViewController;
 @property (nonatomic, retain) CreateAccountController *createAccountController;
+@property (nonatomic, retain) SignInController *signInController;
 
 //home screen buttons
 @property (nonatomic, retain) IBOutlet UIButton *AnnotationButton;

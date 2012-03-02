@@ -47,7 +47,7 @@
 @property (nonatomic, assign) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, assign) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, assign) IBOutlet UITextField *emailTextField;
-@property (nonatomic, assign) IBOutlet UIButton * createAccountButton;
+@property (nonatomic, retain) IBOutlet UIButton *createAccountButton;
 @property (nonatomic, assign) ServerConnectionController *serverConnectionController;
 
 

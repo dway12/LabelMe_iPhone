@@ -52,6 +52,8 @@
 		CDE93D2A14CF4E6400C4B50A /* Cloud4.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE93D2614CF4E6400C4B50A /* Cloud4.png */; };
 		CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */; };
 		CDF85ECF14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF85ECE14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png */; };
+		CDFBFEE41501681D00BCF4A9 /* SignInController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFBFEE21501681D00BCF4A9 /* SignInController.m */; };
+		CDFBFEE51501681D00BCF4A9 /* SignInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFBFEE31501681D00BCF4A9 /* SignInController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,9 @@
 		CDE93D2614CF4E6400C4B50A /* Cloud4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud4.png; sourceTree = "<group>"; };
 		CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
 		CDF85ECE14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glossy_button_blank_black_rectangle.png; sourceTree = "<group>"; };
+		CDFBFEE11501681D00BCF4A9 /* SignInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInController.h; sourceTree = "<group>"; };
+		CDFBFEE21501681D00BCF4A9 /* SignInController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInController.m; sourceTree = "<group>"; };
+		CDFBFEE31501681D00BCF4A9 /* SignInController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +280,8 @@
 			children = (
 				CDE26978143652D400B200FE /* LabelMeViewController.h */,
 				CDE26979143652D400B200FE /* LabelMeViewController.m */,
+				CDFBFEE11501681D00BCF4A9 /* SignInController.h */,
+				CDFBFEE21501681D00BCF4A9 /* SignInController.m */,
 				CD0D71A414E1C63D00B12C38 /* CreateAccountController.h */,
 				CD0D71A514E1C63D00B12C38 /* CreateAccountController.m */,
 				CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */,
@@ -292,6 +299,7 @@
 		CDFBFEE0150156D100BCF4A9 /* Displays */ = {
 			isa = PBXGroup;
 			children = (
+				CDFBFEE31501681D00BCF4A9 /* SignInController.xib */,
 				CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */,
 				CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */,
 				CD2819871448C01F00634D37 /* CameraOverlay.xib */,
@@ -391,6 +399,7 @@
 				CD0D71A314E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png in Resources */,
 				CD0D71A814E1C97100B12C38 /* CreateAccountView.xib in Resources */,
 				CDF85ECF14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png in Resources */,
+				CDFBFEE51501681D00BCF4A9 /* SignInController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +447,7 @@
 				CD22C0D114D0A04900404461 /* BoxDrawView.m in Sources */,
 				CD0D71A614E1C63D00B12C38 /* CreateAccountController.m in Sources */,
 				CD0C3B7C14F7F706002E832A /* ServerConnectionController.m in Sources */,
+				CDFBFEE41501681D00BCF4A9 /* SignInController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
