@@ -7,14 +7,13 @@
 //
 
 #import "LabelMeViewController.h"
-#import "ServerConnectionController.h"
 
 
 
 @implementation LabelMeViewController
 
 
-@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController, serverConnectionController;
+@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController;
 
 #pragma mark -
 #pragma mark LabelMeViewController
@@ -33,9 +32,7 @@
     
     
     
-    
-    self.serverConnectionController = [[ServerConnectionController alloc] autorelease];
-    [self.serverConnectionController initWithDefaultReceivers];
+
     
     
 }
@@ -63,7 +60,9 @@
 }
 -(IBAction)annotationAction:(id)sender
 {
-    [self presentModalViewController:annotationViewController animated:YES];
+
+    annotationViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController: annotationViewController animated: YES];
 
     
     
@@ -81,8 +80,9 @@
 #pragma mark AnnotationViewDelegate
 -(void)didHitBack
 {
-    
+
     [self dismissModalViewControllerAnimated:YES];
+
 }
 
 #pragma mark -

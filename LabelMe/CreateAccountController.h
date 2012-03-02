@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define myAppDelegate [[UIApplication sharedApplication] delegate] 
+
+@class ServerConnectionController;
 
 
 @protocol CreateAccountControllerDelegate;
@@ -34,6 +35,8 @@
     BOOL emailValid;
     BOOL passwordValid;
     
+    ServerConnectionController *serverConnectionController;
+    
 
     
 }
@@ -45,6 +48,7 @@
 @property (nonatomic, assign) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, assign) IBOutlet UITextField *emailTextField;
 @property (nonatomic, assign) IBOutlet UIButton * createAccountButton;
+@property (nonatomic, assign) ServerConnectionController *serverConnectionController;
 
 
 -(IBAction)didHitBackButton:(id)sender;

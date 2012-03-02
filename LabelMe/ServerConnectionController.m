@@ -143,11 +143,11 @@ enum {
     kPostBufferSize = 32768
 };
 
-#if TARGET_IPHONE_SIMULATOR
-static NSString * kDefaultPostURLText = @"http://localhost:9000/cgi-bin/PostIt.py";
-#else
-static NSString * kDefaultPostURLText = @"";
-#endif
+//#if TARGET_IPHONE_SIMULATOR
+//static NSString * kDefaultPostURLText = @"http://localhost:9000/cgi-bin/PostIt.py";
+//#else
+//static NSString * kDefaultPostURLText = @"";
+//#endif
 
 @interface ServerConnectionController ()
 
@@ -403,7 +403,7 @@ static NSString * kDefaultPostURLText = @"";
         
         [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"", boundaryStr] forHTTPHeaderField:@"Content-Type"];
         [request setValue:[NSString stringWithFormat:@"%llu", bodyLength] forHTTPHeaderField:@"Content-Length"];
-        
+        [request setValue:[NSString stringWithFormat:@"form-data; name=\"userfile\"; filename=\"start%@middle%@end.jpg\"\r\n", @"labeltext", @"values"] forHTTPHeaderField:@"Content-Disposition"];
         self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
         assert(self.connection != nil);
         

@@ -7,17 +7,21 @@
 //
 
 #import "CreateAccountController.h"
+#import "ServerConnectionController.h"
 
 @implementation CreateAccountController
 
 @synthesize delegate, backButton, usernameTextField, emailTextField, passwordTextField, createAccountButton;
+
+@synthesize serverConnectionController = _serverConnectionController;
 
 
 
 
 -(void)viewDidLoad
 {
-    
+    self.serverConnectionController = [[ServerConnectionController alloc] autorelease];
+    [self.serverConnectionController initWithDefaultReceivers];
     
 }
 
@@ -36,6 +40,7 @@
     [usernameTextField release];
     [emailTextField release];
     [passwordTextField release];
+    [createAccountButton release];
     
 }
 
