@@ -11,43 +11,45 @@
 
 @implementation CreateAccountController
 
-@synthesize delegate, backButton, usernameTextField, emailTextField, passwordTextField, createAccountButton;
+@synthesize delegate =              _delegate;
+@synthesize backButton =            _backButton;
+@synthesize usernameTextField =     _usernameTextField;
+@synthesize emailTextField =        _emailTextField;
+@synthesize passwordTextField =     _passwordTextField; 
+@synthesize createAccountButton =   _createAccountButton;
 
-@synthesize serverConnectionController = _serverConnectionController;
 
 
 
 
 -(void)viewDidLoad
 {
-    self.serverConnectionController = [[ServerConnectionController alloc] autorelease];
-    [self.serverConnectionController initWithDefaultReceivers];
+
     
 }
 
 -(void)viewDidUnload
 {
-    backButton = nil;
-    createAccountButton = nil;
-    usernameTextField = nil;
-    emailTextField = nil;
-    passwordTextField = nil;
+    self.backButton = nil;
+    self.createAccountButton = nil;
+    self.usernameTextField = nil;
+    self.emailTextField = nil;
+    self.passwordTextField = nil;
     [super viewDidUnload];
 }
 
 -(void)dealloc
 {
-    [backButton release];
-    [usernameTextField release];
-    [emailTextField release];
-    [passwordTextField release];
-    [createAccountButton release];
+    [self.backButton release];
+    [self.usernameTextField release];
+    [self.emailTextField release];
+    [self.passwordTextField release];
+    [self.createAccountButton release];
     
 }
 
 -(IBAction)didHitBackButton:(id)sender
 {
-    
     [self.delegate didHitBackFromCreatingAccount];
 }
 
@@ -86,13 +88,14 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     
-    usernameString = usernameTextField.text;
-    passwordString = passwordTextField.text;
-    emailString = emailTextField.text;
+    usernameString = self.usernameTextField.text;
+    passwordString = self.passwordTextField.text;
+    emailString = self.emailTextField.text;
     
 
     [self checkField];
     return YES;
+    
     
     
 }
@@ -130,9 +133,9 @@
     
     if (usernameValid & passwordValid & emailValid)
     {
-        [emailTextField resignFirstResponder];
-        [usernameTextField resignFirstResponder];
-        [passwordTextField resignFirstResponder];
+        [self.emailTextField resignFirstResponder];
+        [self.usernameTextField resignFirstResponder];
+        [self.passwordTextField resignFirstResponder];
         [self sendCreateAccountToServer];
     }
     else if (!usernameValid & passwordValid & emailValid)

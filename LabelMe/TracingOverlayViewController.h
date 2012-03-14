@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BoxDrawView.h"
+#import "ServerConnectionController.h"
 
 
 
@@ -15,57 +16,55 @@
 
 @interface TracingOverlayViewController : UIViewController <UITextFieldDelegate>
 {
-    id <TracingOverlayViewControllerDelegate> delegate;
+    id <TracingOverlayViewControllerDelegate>       _delegate;
 @private
     
-    // buttons and text field
-    UIBarButtonItem *doneTracingButton;
-    UIBarButtonItem *cancelButton;
+    ServerConnectionController *                    _serverConnectionController;
     
-    UITextField *LabelerText;
+    // buttons and text field
+    UIBarButtonItem *                               _doneTracingButton;
+    UIBarButtonItem *                               _cancelButton;
+    
+    UITextField *                                   _LabelerText;
     
     // image helper values
-    UIImage *tracingPicture;
-    UIImage *originalTracingPicture;
-    
-    UIImageView *tracingPictureView;
+    UIImage *                                       _tracingPicture;
+    UIImageView *                                   _tracingPictureView;
     
     
     //points for string data
-    CGPoint *upperLeft;
-    CGPoint *lowerRight;
+    CGPoint *                                       _upperLeft;
+    CGPoint *                                       _lowerRight;
     
     CGPoint locationUpperLeft;
     CGPoint locationLowerRight;
     
-    NSString *labelString;
+    NSString *                                      _labelString;
     
+    IBOutlet BoxDrawView *                          _boxDrawView;
+
     
+    int                                             _currentIndex;
+    double                                          _imageScaleFactor;
+
+    
+    //not properties
     NSString *pointStringUpperLeft;
     NSString *pointStringUpperRight;
     NSString *pointStringLowerRight;
     NSString *pointStringLowerLeft;
     NSString *pointStringComplete;
     
-    double imageScaleFactor;
     
     //drawing box
-    
-//    IBOutlet UIImageView *cloud1;
-//    IBOutlet UIImageView *cloud2;
-//    IBOutlet UIImageView *cloud3;
-//    IBOutlet UIImageView *cloud4;
     
     CGPoint corner1;
     CGPoint corner2;
     CGPoint corner3;
     CGPoint corner4;
-    
     CGPoint *imagesArray;
     
-    int currentIndex;
     
-    IBOutlet BoxDrawView *boxDrawView;
     
     
     
@@ -74,26 +73,30 @@
     
 }
 
+@property (nonatomic, retain) id<TracingOverlayViewControllerDelegate> delegate;
+
+@property (nonatomic, assign) ServerConnectionController  * serverConnectionController; 
+
+
 @property (nonatomic, retain) IBOutlet UIImageView *tracingPictureView;
 @property (nonatomic, retain) UIImage *tracingPicture;
-@property (nonatomic, retain) UIImage *originalTracingPicture;
+
+
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneTracingButton;
-
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic) double imageScaleFactor;
-
-
-
 @property (nonatomic, retain) IBOutlet UITextField *LabelerText;
-@property (nonatomic, retain) NSString *labelString;
-@property (nonatomic, retain) NSString *pointStringComplete;
+@property(nonatomic, retain) IBOutlet BoxDrawView *boxDrawView;
 
-@property (nonatomic, retain) id<TracingOverlayViewControllerDelegate> delegate;
+
+
+@property (nonatomic, retain) NSString *labelString;
+
 
 
 @property(nonatomic) int currentIndex;
+@property (nonatomic) double imageScaleFactor;
 
-@property(nonatomic, retain) IBOutlet BoxDrawView *boxDrawView;
+
 
 
 
@@ -103,15 +106,12 @@
 -(IBAction)touchPicture:(id)sender;
 
 -(void)setPicture:(UIImage*)picture;
--(void)setOriginalPicture:(UIImage *)picture1;
 -(void)drawRect;
--(void)clearBox;
 -(void)createPointString;
 
 
 @end
 
 @protocol TracingOverlayViewControllerDelegate
--(void)finishedTracing:(UIImage*)pictureToSend:(NSString*)labelText1:(NSString*)pointStringComplete;
 -(void)didHitCancel;
 @end

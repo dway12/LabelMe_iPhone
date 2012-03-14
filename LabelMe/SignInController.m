@@ -9,7 +9,11 @@
 #import "SignInController.h"
 
 @implementation SignInController
-@synthesize backButton, signInButton, passwordTextField, usernameTextField, delegate;
+@synthesize backButton =                _backButton;
+@synthesize signInButton =              _signInbutton;
+@synthesize passwordTextField =         _passwordTextField;
+@synthesize usernameTextField =         _usernameTextField;
+@synthesize delegate =                  _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,20 +42,37 @@
 
 - (void)viewDidUnload
 {
+    self.backButton = nil;
+    self.signInButton = nil;
+    self.passwordTextField = nil;
+    self.usernameTextField = nil;
+    self.delegate = nil;
+    
+    
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
 }
 
+-(void) dealloc
+{
+    [self.backButton release];
+    [self.signInButton release];
+    [self.passwordTextField release];
+    [self.usernameTextField release];
+    
+    
+    [super dealloc];
+}
+/*
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+}*/
 
 -(IBAction)hitBackButton:(id)sender
 {
-    
+
     [self.delegate didHitBackFromSignInController];
 }
 -(IBAction)hitSignInButton:(id)sender 
@@ -87,38 +108,37 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
-    usernameString = usernameTextField.text;
-    passwordString = passwordTextField.text;
+    _usernameString = self.usernameTextField.text;
+    _passwordString = self.passwordTextField.text;
     
     
     [self checkField];
     return YES;
     
-    
 }
+
 
 -(void)checkField
 {
     
     
-    if (![usernameString isEqualToString:@""])
+    if (![_usernameString isEqualToString:@""])
     {
         NSCharacterSet *alphaSet = [NSCharacterSet alphanumericCharacterSet];
-        usernameValid = [[usernameString stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
+        usernameValid = [[_usernameString stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
         
     }
-    if (![passwordString isEqualToString:@""])
+    if (![_passwordString isEqualToString:@""])
     {
         NSCharacterSet *alphaSet = [NSCharacterSet alphanumericCharacterSet];
-        passwordValid = [[passwordString stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
+        passwordValid = [[_passwordString stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
     }
 
     
     if (usernameValid & passwordValid )
     {
-        [usernameTextField resignFirstResponder];
-        [passwordTextField resignFirstResponder];
+        [self.usernameTextField resignFirstResponder];
+        [self.passwordTextField resignFirstResponder];
       //  [self sendCreateAccountToServer];
     }
 

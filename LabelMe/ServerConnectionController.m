@@ -164,6 +164,7 @@ enum {
 @property (nonatomic, assign)   uint8_t *         bufferOnHeap;
 @property (nonatomic, assign)   size_t            bufferOffset;
 @property (nonatomic, assign)   size_t            bufferLimit;
+@property (nonatomic, assign)   NSData *          dataToSend;
 
 @end
 
@@ -171,6 +172,7 @@ enum {
 @implementation ServerConnectionController
 
 @synthesize serverJPGReceiverURL;
+@synthesize dataToSend = _dataToSend;
 
 
 -(void)initWithDefaultReceivers
@@ -180,12 +182,7 @@ enum {
     
 }
     
-+(void)sendJPGtoServer:(UIImage*)pictureToSend
-{
 
-    
-
-}
 
 + (void)releaseObj:(id)obj
 // +++ See comment in -_stopSendWithStatus:.
@@ -199,16 +196,13 @@ enum {
 
 - (void)_sendDidStart
 {
-//    self.statusLabel.text = @"Sending";
-//    self.cancelButton.enabled = YES;
-//    [self.activityIndicator startAnimating];
-//    [[LabelMeAppDelegate sharedAppDelegate] didStartNetworking];
+
+    [[LabelMeAppDelegate sharedAppDelegate] didStartNetworking];
 }
 
 - (void)_updateStatus:(NSString *)statusString
 {
     assert(statusString != nil);
-//    self.statusLabel.text = statusString;
 }
 
 - (void)_sendDidStopWithStatus:(NSString *)statusString
@@ -216,10 +210,8 @@ enum {
     if (statusString == nil) {
         statusString = @"POST succeeded";
     }
-//    self.statusLabel.text = statusString;
-//    self.cancelButton.enabled = NO;
-//    [self.activityIndicator stopAnimating];
-//    [[LabelMeAppDelegate sharedAppDelegate] didStopNetworking];
+
+   [[LabelMeAppDelegate sharedAppDelegate] didStopNetworking];
 }
 
 #pragma mark * Core transfer code
@@ -262,7 +254,7 @@ enum {
     return result;
 }
 
-- (void)_startSend:(NSString *)filePath
+- (void)_startSend
 {
     BOOL                    success;
     NSURL *                 url;
@@ -274,9 +266,6 @@ enum {
     NSNumber *              fileLengthNum;
     unsigned long long      bodyLength;
     
-    assert(filePath != nil);
-    assert([[NSFileManager defaultManager] fileExistsAtPath:filePath]);
-    assert( [filePath.pathExtension isEqual:@"png"] || [filePath.pathExtension isEqual:@"jpg"] );
     
     assert(self.connection == nil);         // don't tap send twice in a row!
     assert(self.bodyPrefixData == nil);     // ditto
@@ -288,28 +277,16 @@ enum {
     assert(self.bufferOnHeap == NULL);      // ditto
     
     // First get and check the URL.
-    
-//    url = [[AppDelegate sharedAppDelegate] smartURLForString:self.urlText.text];
+    url =  [NSURL URLWithString:self.serverJPGReceiverURL   ];
     success = (url != nil);
     
     // If the URL is bogus, let the user know.  Otherwise kick off the connection.
     
     if ( ! success) {
-//        self.statusLabel.text = @"Invalid URL";
     } else {
         // Determine the MIME type of the file.
-        
-        if ( [filePath.pathExtension isEqual:@"png"] ) {
-            contentType = @"image/png";
-        } else if ( [filePath.pathExtension isEqual:@"jpg"] ) {
-            contentType = @"image/jpeg";
-        } else if ( [filePath.pathExtension isEqual:@"gif"] ) {
-            contentType = @"image/gif";
-        } else {
-            assert(NO);
-            contentType = nil;          // quieten a warning
-        }
-        
+
+        contentType = @"image/jpeg";
         // Calculate the multipart/form-data body.  For more information about the 
         // format of the prefix and suffix, see:
         //
@@ -328,11 +305,11 @@ enum {
                          // empty preamble
                          "\r\n"
                          "--%@\r\n"
-                         "Content-Disposition: form-data; name=\"fileContents\"; filename=\"%@\"\r\n"
+                         "Content-Disposition: form-data; name=\"userfile\"; filename=\"NewPicture\"\r\n"
                          "Content-Type: %@\r\n"
                          "\r\n",
                          boundaryStr,
-                         [filePath lastPathComponent],       // +++ very broken for non-ASCII
+    //                     [filePath lastPathComponent],       // +++ very broken for non-ASCII
                          contentType
                          ];
         assert(bodyPrefixStr != nil);
@@ -358,7 +335,8 @@ enum {
         self.bodySuffixData = [bodySuffixStr dataUsingEncoding:NSASCIIStringEncoding];
         assert(self.bodySuffixData != nil);
         
-        fileLengthNum = (NSNumber *) [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:NULL] objectForKey:NSFileSize];
+
+        fileLengthNum = [NSNumber numberWithInt:[self.dataToSend length]];
         assert( [fileLengthNum isKindOfClass:[NSNumber class]] );
         
         bodyLength =
@@ -369,7 +347,7 @@ enum {
         // Open a stream for the file we're going to send.  We open this stream 
         // straight away because there's no need to delay.
         
-        self.fileStream = [NSInputStream inputStreamWithFileAtPath:filePath];
+        self.fileStream = [NSInputStream inputStreamWithData:self.dataToSend];
         assert(self.fileStream != nil);
         
         [self.fileStream open];
@@ -412,9 +390,25 @@ enum {
         [self _sendDidStart];
     }
 }
+-(void)sendJPGtoServer:(UIImage*)pictureToSend
+{
+    
+    UIGraphicsBeginImageContext(CGSizeMake(480, 690));
+    [pictureToSend drawInRect:CGRectMake(0, 0, 480, 690)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();    
+    UIGraphicsEndImageContext();
+    
+    self.dataToSend = UIImageJPEGRepresentation(newImage, 1);
+    [self _startSend];
+    
+    
+    
+}
 
 - (void)_stopSendWithStatus:(NSString *)statusString
 {
+    NSLog(@"%@",statusString);
+    
     if (self.bufferOnHeap) {
         free(self.bufferOnHeap);
         self.bufferOnHeap = NULL;
@@ -503,6 +497,8 @@ enum {
                         
                         self.bufferOffset = 0;
                         self.bufferLimit  = [self.bodySuffixData length];
+                        
+
                     }
                 }
                 
@@ -520,9 +516,9 @@ enum {
                     //
                     // +++ Need bug numbers for these problems.
                     self.producerStream.delegate = nil;
-                    // [self.producerStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+                     [self.producerStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
                     [self.producerStream close];
-                    // self.producerStream = nil;
+                     self.producerStream = nil;
                 }
             }
             
@@ -539,7 +535,7 @@ enum {
             }
         } break;
         case NSStreamEventErrorOccurred: {
-            NSLog(@"producer stream error %@", [aStream streamError]);
+            //NSLog(@"producer stream error %@", [aStream streamError]);
             [self _stopSendWithStatus:@"Stream open error"];
         } break;
         case NSStreamEventEndEncountered: {
@@ -567,7 +563,6 @@ enum {
     if ((httpResponse.statusCode / 100) != 2) {
         [self _stopSendWithStatus:[NSString stringWithFormat:@"HTTP error %zd", (ssize_t) httpResponse.statusCode]];
     } else {
-//        self.statusLabel.text = @"Response OK.";
     }    
 }
 
@@ -607,31 +602,6 @@ enum {
     [self _stopSendWithStatus:nil];
 }
 
-#pragma mark * Actions
-
-- (void)sendAction:(UIView *)sender
-{
-    assert( [sender isKindOfClass:[UIView class]] );
-    
-    if ( ! self.isSending ) {
-        NSString *  filePath;
-        
-        // User the tag on the UIButton to determine which image to send.
-        
-//        filePath = [[AppDelegate sharedAppDelegate] pathForTestImage:sender.tag];
-        assert(filePath != nil);
-        
-        [self _startSend:filePath];
-    }
-}
-
-- (void)cancelAction:(id)sender
-{
-#pragma unused(sender)
-    [self _stopSendWithStatus:@"Cancelled"];
-}
-
-
 
 
 
@@ -639,7 +609,7 @@ enum {
 {
     [self _stopSendWithStatus:@"Stopped"];
     
-
+    [self.serverJPGReceiverURL release];
     
     [super dealloc];
 }

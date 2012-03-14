@@ -11,8 +11,12 @@
 
 @interface LabelMeAppDelegate : NSObject <UIApplicationDelegate>
 {
-    UIWindow *window;
-    LabelMeViewController *labelMeViewController;
+    UIWindow                *window;
+    LabelMeViewController   *labelMeViewController;
+    
+    NSInteger               _networkingCount;
+    
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -22,7 +26,16 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (nonatomic, assign) NSInteger networkingCount;
+
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+-(void)didStartNetworking;
+-(void)didStopNetworking;
+
++ (LabelMeAppDelegate *)sharedAppDelegate;
+
 
 @end

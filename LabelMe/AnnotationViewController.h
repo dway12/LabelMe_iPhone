@@ -15,25 +15,24 @@
 
 @interface AnnotationViewController : UIViewController < CameraOverlayViewControllerDelegate, TracingOverlayViewControllerDelegate>
 {
-    id <AnnotationViewControllerDelegate> delegate;
+    id <AnnotationViewControllerDelegate>       _delegate;
     
-    CameraOverlayViewController *cameraOverlayViewController;
+    CameraOverlayViewController *               _cameraOverlayViewController;
     
-    
-    TracingOverlayViewController *tracingOverlayViewController;
+    TracingOverlayViewController *              _tracingOverlayViewController;
     
     
 @private
-    UIButton *takePictureModeButton;
-    UIButton *backButton;
-    UIButton *tracingModeButton;
-    NSMutableArray *capturedImages;
+    UIButton *                                  _takePictureModeButton;
+    UIButton *                                  _backButton;
+    UIButton *                                  _tracingModeButton;
+    NSMutableArray *                            _capturedImages;
     
 
 }
 
 
-@property (nonatomic, assign) id <AnnotationViewControllerDelegate> delegate;
+@property (nonatomic, retain) id <AnnotationViewControllerDelegate> delegate;
 @property (nonatomic, retain) CameraOverlayViewController  *cameraOverlayViewController;
 @property (nonatomic, retain) TracingOverlayViewController *tracingOverlayViewController;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureModeButton;
@@ -47,7 +46,6 @@
 -(IBAction)startTracing:(id)sender;
 
 -(void)rightToTrace;
--(void)finishedTracing: (UIImage*) pictureToSend: (NSString*) labelText1: (NSString*) pointStringComplete;
 
 
 @end

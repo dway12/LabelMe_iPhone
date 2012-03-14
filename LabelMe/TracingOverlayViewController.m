@@ -12,13 +12,24 @@
 
 @implementation TracingOverlayViewController
 
-@synthesize doneTracingButton, cancelButton, delegate, tracingPictureView, tracingPicture, originalTracingPicture, LabelerText, labelString, pointStringComplete, imageScaleFactor,    currentIndex, boxDrawView;
+@synthesize doneTracingButton =     _doneTracingButton;
+@synthesize cancelButton =          _cancelButton;
+@synthesize delegate =              _delegate;
+@synthesize tracingPictureView =    _tracingPictureView;
+@synthesize tracingPicture =        _tracingPicture;
+@synthesize LabelerText =           _LabelerText;
+@synthesize labelString =           _labelString;
+@synthesize imageScaleFactor =      _imageScaleFactor;
+@synthesize currentIndex =          _currentIndex;
+@synthesize boxDrawView =           _boxDrawView;
+
+@synthesize serverConnectionController = _serverConnectionController;
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [[event allTouches] anyObject];
 	CGPoint location = [touch locationInView:touch.view];
     
-    currentIndex = 6;
+    self.currentIndex = 6;
     float dist = 1000000;
     float newdist;
     
@@ -32,18 +43,17 @@
         if (newdist<dist)
         {
             dist = newdist;
-            currentIndex = i;
+            self.currentIndex = i;
             
         }
         
     }
     
-    NSLog(@"touch");
 
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (currentIndex != 6)
+    if (self.currentIndex != 6)
     {
         
         UITouch *touch = [[event allTouches] anyObject];
@@ -53,14 +63,14 @@
       //  location.y = location.y  ;
                      
 
-        if (currentIndex == 0)
+        if (self.currentIndex == 0)
         {
             imagesArray[0] = location;
             imagesArray[1].y = location.y;
             imagesArray[2].x = location.x;
             locationUpperLeft = location;
             
-        }else if( currentIndex == 1)
+        }else if( self.currentIndex == 1)
         {
             imagesArray[1] = location;
             imagesArray[0].y = location.y;
@@ -68,7 +78,7 @@
             locationUpperLeft.y = location.y;
             locationLowerRight.x = location.x;
             
-        }else if (currentIndex == 2)
+        }else if (self.currentIndex == 2)
         {
             imagesArray[2] = location;
             imagesArray[0].x = location.x;
@@ -77,7 +87,7 @@
             locationUpperLeft.x = location.x;
             
             
-        }else if(currentIndex  == 3)
+        }else if(self.currentIndex  == 3)
         {
             
             imagesArray[3] = location;
@@ -87,8 +97,8 @@
             
         }
         //NSLog(@"%@", NSStringFromCGPoint(imagesArray[0]));
-        [boxDrawView setPoints:imagesArray];
-        [boxDrawView setNeedsDisplay];
+        [self.boxDrawView setPoints:imagesArray];
+        [self.boxDrawView setNeedsDisplay];
         
     }    
     
@@ -98,22 +108,15 @@
 
 }
 
--(void)clearBox
-{
-    upperLeft = nil;
-    lowerRight = nil;
-    [self setPicture:originalTracingPicture];
-
-}
 
 -(void)createPointString
 {
     
     // had to modify the y value image scale factor 
-    int upperLeftX = locationUpperLeft.x *imageScaleFactor;
-    int upperLeftY = locationUpperLeft.y *imageScaleFactor * 1.13;
-    int lowerRightX = locationLowerRight.x *imageScaleFactor;
-    int lowerRightY = locationLowerRight.y *imageScaleFactor* 1.13;
+    int upperLeftX = locationUpperLeft.x *self.imageScaleFactor;
+    int upperLeftY = locationUpperLeft.y *self.imageScaleFactor * 1.13;
+    int lowerRightX = locationLowerRight.x *self.imageScaleFactor;
+    int lowerRightY = locationLowerRight.y *self.imageScaleFactor* 1.13;
     pointStringUpperLeft = [NSString stringWithFormat:@"{%i, %i}",upperLeftX,upperLeftY];
     pointStringLowerRight = [NSString stringWithFormat:@"{%i, %i}",lowerRightX, lowerRightY];
 
@@ -130,7 +133,11 @@
 {
 
     [super viewDidLoad];
+    self.serverConnectionController = [ServerConnectionController alloc];
     
+    // if settings allow
+    [self.serverConnectionController initWithDefaultReceivers];
+
     imagesArray = malloc(sizeof(CGPoint)*4);
     imagesArray[0] = CGPointMake(100, 100);
     imagesArray[1] = CGPointMake(300, 100);
@@ -141,14 +148,14 @@
     locationUpperLeft = imagesArray[0];
     
     
-    boxDrawView = [[BoxDrawView alloc] initWithFrame:CGRectMake(0, 45, 320, 460)];
+    self.boxDrawView = [[BoxDrawView alloc] initWithFrame:CGRectMake(0, 45, 320, 460)];
     [self.view addSubview:self.boxDrawView];
-    [boxDrawView setPoints:imagesArray];
+    [self.boxDrawView setPoints:imagesArray];
     
     
     
     
-    self.tracingPictureView.image = tracingPicture;
+    self.tracingPictureView.image = self.tracingPicture;
     
     self.imageScaleFactor = 1.5;
     
@@ -162,47 +169,37 @@
 
 -(void)viewDidUnload
 {
+    self.serverConnectionController = nil;
     self.tracingPictureView = nil;
     self.cancelButton = nil;
     self.doneTracingButton = nil;
     self.LabelerText = nil;
-    self.pointStringComplete = nil;
     self.labelString = nil;
     [super viewDidUnload];
     
 }
 -(void)dealloc
 {
-    [tracingPictureView release];
-    [cancelButton release];
-    [doneTracingButton release];
-    [LabelerText release];
-    [pointStringComplete release];
-    [labelString release];
-    [labelString release];
-    [boxDrawView release];
+    [self->_serverConnectionController release];
+    [self.tracingPictureView release];
+    [self.cancelButton release];
+    [self.doneTracingButton release];
+    [self.LabelerText release];
+    [self.labelString release];
+    [self.labelString release];
+    [self.boxDrawView release];
     free(imagesArray);
     [super release];
     
     
 }
--(void)setOriginalPicture:(UIImage*)picture
-{
-    self->originalTracingPicture = picture;
-    self->tracingPicture = picture;
-    self.tracingPictureView.image = picture;
-    NSLog(@"set ori pic");
-    //self.boxDrawView.backgroundColor= [UIColor colorWithPatternImage:originalTracingPicture];
 
-    
-}
 -(void)setPicture:(UIImage*)picture
 {
     
-    self->tracingPicture = picture;
+    self.tracingPicture = picture;
     self.tracingPictureView.image = picture;
 
-    NSLog(@"set picture");
 }
 
 
@@ -213,14 +210,17 @@
 -(IBAction)doneTracingAction:(id)sender
 {
     
-    [self createPointString];
-    [self.delegate finishedTracing:originalTracingPicture:labelString:pointStringComplete];
+
+    [self.serverConnectionController sendJPGtoServer:self.tracingPicture];
+    
+
+    
     
 }
 -(IBAction)cancelAction:(id)sender
 {
-    upperLeft = nil;
-    lowerRight = nil;
+    //upperLeft = nil;
+    //lowerRight = nil;
     
     [self.delegate didHitCancel];
     
@@ -237,11 +237,8 @@
 -(BOOL)textFieldShouldReturn:(UITextField*)theLabelerText
 {
     [theLabelerText resignFirstResponder];
-    NSLog(@"did hit enter");
-    labelString = theLabelerText.text;
-    
-    labelString = [labelString retain];
-    NSLog(@"'%@'", labelString);
+    self.labelString = theLabelerText.text;
+    self.labelString = [self.labelString retain];
 
     
     return YES;

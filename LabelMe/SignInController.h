@@ -14,19 +14,19 @@
 @interface SignInController : UIViewController <UITextFieldDelegate>
 
 {
-    id<SignInControllerDelegate> delegate;
+    id<SignInControllerDelegate> _delegate;
     
-    IBOutlet UIButton *backButton;
-    IBOutlet UIButton *signInButton;
+    IBOutlet UIButton *     _backButton;
+    IBOutlet UIButton *     _signInButton;
     
-    IBOutlet UITextField *usernameTextField;
-    IBOutlet UITextField *passwordTextField;
+    IBOutlet UITextField *  _usernameTextField;
+    IBOutlet UITextField *  _passwordTextField;
     
-    NSString *usernameString;
-    NSString *passwordString;
+    NSString *              _usernameString;
+    NSString *              _passwordString;
     
-    BOOL passwordValid;
-    BOOL usernameValid;
+    BOOL                    passwordValid;
+    BOOL                    usernameValid;
     
     
     

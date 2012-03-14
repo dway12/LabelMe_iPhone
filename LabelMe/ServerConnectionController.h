@@ -25,14 +25,16 @@
     size_t                      _bufferOffset;
     size_t                      _bufferLimit;
     
+    NSData *                    _dataToSend;
+    
 }
 
 
-+(void)sendJPGtoServer:(UIImage*)pictureToSend;
+-(void)sendJPGtoServer:(UIImage*)pictureToSend;
 -(void)initWithDefaultReceivers;
 
 
-@property (retain, readwrite) NSString* serverJPGReceiverURL;
+@property (retain, retain) NSString* serverJPGReceiverURL;
 
 
 

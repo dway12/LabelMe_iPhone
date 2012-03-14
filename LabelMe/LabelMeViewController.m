@@ -13,27 +13,36 @@
 @implementation LabelMeViewController
 
 
-@synthesize AnnotationButton, annotationViewController, LabelMeView, signInButton, createAccountButton, createAccountController, signInController;
+@synthesize AnnotationButton =              _AnnotationButton;
+@synthesize annotationViewController =      _annotationViewController;
+@synthesize LabelMeView =                   _LabelMeView; 
+@synthesize signInButton =                  _signInButton;
+@synthesize createAccountButton =           _createAccountButton;
+@synthesize createAccountController =       _createAccountController;
+@synthesize signInController =              _signInController;
 
 #pragma mark -
 #pragma mark LabelMeViewController
 
 -(void)viewDidLoad
 {
+    
+    //create View Controllers
     self.annotationViewController = 
             [[[AnnotationViewController alloc] initWithNibName:@"AnnotationView" bundle:nil] autorelease];
-    
-    
     self.createAccountController = 
             [[[CreateAccountController alloc] initWithNibName:@"CreateAccountView" bundle:nil] autorelease];
     self.signInController = 
             [[[SignInController alloc] initWithNibName:@"SignInController" bundle:nil] autorelease];
+    
+    self.annotationViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.createAccountController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.signInController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+
     self.createAccountController.delegate = self;
     self.annotationViewController.delegate = self;
+    self.signInController.delegate = self;
     
-    
-    
-
     
     
 }
@@ -41,20 +50,24 @@
 {
     self.LabelMeView = nil;
     self.AnnotationButton = nil;
-    self.signInButton = nil;
-    self.createAccountButton = nil;
     self.annotationViewController = nil;
+    self.signInButton = nil;
+    self.signInController = nil;
+    self.createAccountButton = nil;
+    self.createAccountController = nil;
 }
 
 
 
 -(void)dealloc
 {
-    [annotationViewController release];
-    [LabelMeView release];
-    [AnnotationButton release];
-    [signInButton release];
-    [createAccountButton release];
+    [self->_annotationViewController release];
+    [self->_LabelMeView release];
+    [self->_AnnotationButton release];
+    [self->_signInButton release];
+    [self->_signInController release];
+    [self->_createAccountController release];
+    [self->_createAccountButton release];
     [super dealloc];
     
     
@@ -62,19 +75,18 @@
 -(IBAction)annotationAction:(id)sender
 {
 
-    annotationViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentModalViewController: annotationViewController animated: YES];
+    [self presentModalViewController: self.annotationViewController animated: YES];
 
     
     
 }
 -(IBAction)createAccountAction:(id)sender
 {
-    [self presentModalViewController:createAccountController animated:YES];
+    [self presentModalViewController:self.createAccountController animated:YES];
 }
 -(IBAction)signInAction:(id)sender
 {
-    [self presentModalViewController:signInController animated:YES];
+    [self presentModalViewController:self.signInController animated:YES];
 }
 
 #pragma mark -

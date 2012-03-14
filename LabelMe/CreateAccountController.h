@@ -17,25 +17,25 @@
 @interface CreateAccountController : UIViewController <UITextFieldDelegate>
 
 {
-    id <CreateAccountControllerDelegate> delegate;
+    id <CreateAccountControllerDelegate> _delegate;
     
-    IBOutlet UIButton *backButton;
+    IBOutlet UIButton *                 _backButton;
+    IBOutlet UIButton *                 _createAccountButton;
+
     
-    IBOutlet UITextField *usernameTextField;
-    IBOutlet UITextField *passwordTextField;
-    IBOutlet UITextField *emailTextField;
+    IBOutlet UITextField *              _usernameTextField;
+    IBOutlet UITextField *              _passwordTextField;
+    IBOutlet UITextField *              _emailTextField;
     
-    NSString *usernameString;
-    NSString *passwordString;
-    NSString *emailString;
+    NSString *                          usernameString;
+    NSString *                          passwordString;
+    NSString *                          emailString;
     
-    IBOutlet UIButton *createAccountButton;
     
-    BOOL usernameValid;
-    BOOL emailValid;
-    BOOL passwordValid;
+    BOOL                                usernameValid;
+    BOOL                                emailValid;
+    BOOL                                passwordValid;
     
-    ServerConnectionController *serverConnectionController;
     
 
     
@@ -48,7 +48,6 @@
 @property (nonatomic, assign) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, assign) IBOutlet UITextField *emailTextField;
 @property (nonatomic, retain) IBOutlet UIButton *createAccountButton;
-@property (nonatomic, assign) ServerConnectionController *serverConnectionController;
 
 
 -(IBAction)didHitBackButton:(id)sender;
@@ -56,7 +55,6 @@
 -(void)checkField;
 -(void)showInvalidFieldAlert: (NSString *)incorrectString:(NSString *)problemString;
 -(void)animateTextField: (UITextField*) textField up: (BOOL) up;
-
 -(void)sendCreateAccountToServer;
 
 

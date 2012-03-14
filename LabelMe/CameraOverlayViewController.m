@@ -10,13 +10,15 @@
 
 @implementation CameraOverlayViewController
 
-@synthesize delegate, takePictureButton, backButton, imagePickerController;
+@synthesize delegate =                  _delegate;
+@synthesize takePictureButton =         _takePictureButton;
+@synthesize backButton =                _backButton;
+@synthesize imagePickerController =     _imagePickerController;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if ((self = [super initWithNibName:@"CameraOverlay" bundle:nil]))
     {
-        
         
         self.imagePickerController = [[[UIImagePickerController alloc] init] autorelease];
         self.imagePickerController.delegate = self;
@@ -28,6 +30,7 @@
 
 -(void)viewDidUnload
 {
+    self.delegate = nil;
     self.takePictureButton = nil;
     self.backButton = nil;
     self.imagePickerController = nil;
@@ -40,9 +43,9 @@
 
 -(void)dealloc
 {
-    [takePictureButton release];
-    [backButton release];
-    [imagePickerController release];
+    [self.takePictureButton release];
+    [self.backButton release];
+    [self.imagePickerController release];
     
     
     [super dealloc];

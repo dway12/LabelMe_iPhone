@@ -16,13 +16,13 @@
 @interface CameraOverlayViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     
-    id <CameraOverlayViewControllerDelegate> delegate;
-    UIImagePickerController *imagePickerController;
+    id <CameraOverlayViewControllerDelegate>        _delegate;
+    UIImagePickerController *                       _imagePickerController;
     
-@private
+    @private
     
-    UIBarButtonItem *takePictureButton;
-    UIBarButtonItem *backButton;
+    UIBarButtonItem *                               _takePictureButton;
+    UIBarButtonItem *                               _backButton;
     
     
     

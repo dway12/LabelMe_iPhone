@@ -8,27 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "LabelMe/TracingOverlayViewController.h"
-         timestampString = "349733334.128668"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
-         landmarkName = "originalTracingPicture"
-         landmarkType = "19">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "LabelMe/TracingOverlayViewController.m"
-         timestampString = "349217592.477617"
+         timestampString = "353275194.279154"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "15"
          endingLineNumber = "15"
-         landmarkName = "doneTracingButton,cancelButton,delegate,tracingPictureView,tracingPicture,originalTracingPicture,LabelerText,labelString,pointStringComplete,imageScaleFactor,currentIndex,boxDrawView"
+         landmarkName = "cancelButton"
          landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint

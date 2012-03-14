@@ -15,26 +15,23 @@
 
 
 
-@interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate, CreateAccountControllerDelegate>
+@interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate, CreateAccountControllerDelegate, SignInControllerDelegate>
 {
     
 
-    AnnotationViewController *annotationViewController; //annotationView
+    AnnotationViewController *  _annotationViewController;
+    CreateAccountController *   _createAccountController;    
+    SignInController *          _signInController;
     
-    CreateAccountController *createAccountController;
     
-    SignInController *signInController;
     //home screen buttons
 
-    UIButton *AnnotationButton;
-    UIButton *Button2;
-    UIButton *Button3;
+    UIButton *                  _AnnotationButton;
+    UIButton *                  _signInButton;
+    UIButton *                  _createAccountButton;
     
-    UIView  *LabelMeView;
-    
-    UIButton *signInButton;
-    UIButton *createAccountButton;
-    
+    UIView  *                   _LabelMeView;
+
     
 }
 
@@ -45,17 +42,14 @@
 
 //home screen buttons
 @property (nonatomic, retain) IBOutlet UIButton *AnnotationButton;
-
 @property (nonatomic, retain) IBOutlet UIButton *signInButton;
 @property (nonatomic, retain) IBOutlet UIButton *createAccountButton;
 
-//labelmeImage
+//labelmeView
 @property (nonatomic, retain) IBOutlet UIView *LabelMeView;
 
 //home screen button actions
 -(IBAction)annotationAction:(id)sender;
-
-
 -(IBAction)signInAction:(id)sender;
 -(IBAction)createAccountAction:(id)sender;
 
