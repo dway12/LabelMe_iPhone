@@ -15,18 +15,49 @@
 @synthesize backButton =                _backButton;
 @synthesize imagePickerController =     _imagePickerController;
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    NSLog(@"blabhl");
+//    if ((self = [super initWithNibName:@"CameraOverlay" bundle:nil]))
+//    {
+//        
+//        self.imagePickerController = [[[UIImagePickerController alloc] init] autorelease];
+//        self.imagePickerController.delegate = self;
+//    }
+//    return self;
+//    
+//}
+-(void)viewDidLoad
 {
-    if ((self = [super initWithNibName:@"CameraOverlay" bundle:nil]))
-    {
-        
-        self.imagePickerController = [[[UIImagePickerController alloc] init] autorelease];
-        self.imagePickerController.delegate = self;
-    }
-    return self;
     
+    [super viewDidLoad];
+    NSLog(@"Hi");
+//    self.imagePickerController = [[[UIImagePickerController alloc] init] autorelease];
+//    self.imagePickerController.delegate = self;
+//    
+//    
+//    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    [self.view addSubview:self.imagePickerController.view];
+    
+//    self.imagePickerController.showsCameraControls = NO;
+//    
+//    if ([[self.imagePickerController.cameraOverlayView subviews] count] == 0)
+//    {
+//        // setup our custom overlay view for the camera
+//        //
+//        // ensure that our custom view's frame fits within the parent frame
+//        CGRect overlayViewFrame = self.imagePickerController.cameraOverlayView.frame;
+//        CGRect newFrame = CGRectMake(0.0,
+//                                     CGRectGetHeight(overlayViewFrame) -
+//                                     self.view.frame.size.height - 10.0,
+//                                     CGRectGetWidth(overlayViewFrame),
+//                                     self.view.frame.size.height + 10.0);
+//        self.view.frame = newFrame;
+//        [self.imagePickerController.cameraOverlayView addSubview:self.view];
+//    }
+//    
+//    [self presentModalViewController:self.imagePickerController animated:YES];
 }
-
 
 -(void)viewDidUnload
 {

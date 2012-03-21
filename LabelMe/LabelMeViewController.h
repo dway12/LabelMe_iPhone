@@ -15,7 +15,7 @@
 
 
 
-@interface LabelMeViewController : UIViewController <AnnotationViewControllerDelegate, CreateAccountControllerDelegate, SignInControllerDelegate>
+@interface LabelMeViewController : UIViewController 
 {
     
 

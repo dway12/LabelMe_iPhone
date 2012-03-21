@@ -25,7 +25,7 @@
     [[[CameraOverlayViewController alloc] initWithNibName:@"CameraOverlay" bundle:nil] autorelease];
     
     self.tracingOverlayViewController = 
-    [[[TracingOverlayViewController alloc] initWithNibName:@"TracingOverlayView" bundle:nil] autorelease];
+    [[TracingOverlayViewController alloc] initWithNibName:@"TracingOverlayView" bundle:nil];
     
     self.capturedImages = [NSMutableArray array];
 
@@ -48,6 +48,7 @@
 }
 -(void)dealloc
 {
+    NSLog(@"??");
     [self.tracingOverlayViewController release];
     [self.tracingModeButton release];
     [self.cameraOverlayViewController release];
@@ -107,7 +108,7 @@
     
     //send picture to labeling view
     [self.capturedImages addObject:picture];
-    [self.tracingOverlayViewController setOriginalPicture:picture];
+    [self.tracingOverlayViewController setPicture:picture];
 
 
     

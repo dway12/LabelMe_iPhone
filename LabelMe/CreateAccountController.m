@@ -11,8 +11,6 @@
 
 @implementation CreateAccountController
 
-@synthesize delegate =              _delegate;
-@synthesize backButton =            _backButton;
 @synthesize usernameTextField =     _usernameTextField;
 @synthesize emailTextField =        _emailTextField;
 @synthesize passwordTextField =     _passwordTextField; 
@@ -24,13 +22,12 @@
 
 -(void)viewDidLoad
 {
-
-    
+    self.title = @"Create an Account";
+    [super viewDidLoad];
 }
 
 -(void)viewDidUnload
 {
-    self.backButton = nil;
     self.createAccountButton = nil;
     self.usernameTextField = nil;
     self.emailTextField = nil;
@@ -40,7 +37,6 @@
 
 -(void)dealloc
 {
-    [self.backButton release];
     [self.usernameTextField release];
     [self.emailTextField release];
     [self.passwordTextField release];
@@ -48,10 +44,7 @@
     
 }
 
--(IBAction)didHitBackButton:(id)sender
-{
-    [self.delegate didHitBackFromCreatingAccount];
-}
+
 
 -(IBAction)createAccountAction:(id)sender
 {
@@ -73,7 +66,7 @@
 
 - (void) animateTextField: (UITextField*)textField up: (BOOL) up
 {
-    const int movementDistance = 120; // tweak as needed
+    const int movementDistance = 150; // tweak as needed
     const float movementDuration = 0.3f; // tweak as needed
     
     int movement = (up ? -movementDistance : movementDistance);

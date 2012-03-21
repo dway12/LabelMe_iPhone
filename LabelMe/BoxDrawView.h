@@ -18,7 +18,6 @@
     
     CGPoint *myPoints;
     
-    IBOutlet UIImageView *cloud9;
     
 }
 

@@ -27,6 +27,9 @@
     
     UITextField *                                   _LabelerText;
     
+    IBOutlet UIToolbar *                            _upperToolbar;
+    IBOutlet UIToolbar *                            _lowerToolbar;
+    
     // image helper values
     UIImage *                                       _tracingPicture;
     UIImageView *                                   _tracingPictureView;

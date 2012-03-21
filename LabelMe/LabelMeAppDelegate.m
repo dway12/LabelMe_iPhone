@@ -11,21 +11,28 @@
 @implementation LabelMeAppDelegate
 
 @synthesize window =                    _window;
-@synthesize labelMeViewController =     _labelMeViewController;
+@synthesize navigationController =       _navigationController;
+//@synthesize labelMeViewController =     _labelMeViewController;
 @synthesize managedObjectContext =      __managedObjectContext;
 @synthesize managedObjectModel =        __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize networkingCount =           _networkingCount; 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)applicationDidFinishLaunching:(UIApplication *)application
 {
     // Override point for customization after application launch.
-    //[self.window addSubview:labelMeViewController.LabelMeView];
+    
+    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+    window.backgroundColor = [UIColor redColor];
+
+    [self.window addSubview:navigationController.view];
+    self.window.rootViewController = self.navigationController;
+
+
     [self.window makeKeyAndVisible];
     
     
 
-    return YES;
 }
 + (LabelMeAppDelegate *)sharedAppDelegate
 {
@@ -40,10 +47,11 @@
 
 - (void)dealloc
 {
-    [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
+    [self.window release];
+    [self.navigationController release];
+    [self.managedObjectContext release];
+    [self.managedObjectModel release];
+    [self.persistentStoreCoordinator release];
     [super dealloc];
 }
 

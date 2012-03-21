@@ -13,7 +13,6 @@
 @synthesize signInButton =              _signInbutton;
 @synthesize passwordTextField =         _passwordTextField;
 @synthesize usernameTextField =         _usernameTextField;
-@synthesize delegate =                  _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +35,7 @@
 
 - (void)viewDidLoad
 {
+    self.title = @"Sign In";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -46,7 +46,6 @@
     self.signInButton = nil;
     self.passwordTextField = nil;
     self.usernameTextField = nil;
-    self.delegate = nil;
     
     
     [super viewDidUnload];
@@ -70,11 +69,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }*/
 
--(IBAction)hitBackButton:(id)sender
-{
 
-    [self.delegate didHitBackFromSignInController];
-}
 -(IBAction)hitSignInButton:(id)sender 
 {
     

@@ -129,6 +129,8 @@
     
 }
 
+UIToolbar *toolbar;
+
 -(void)viewDidLoad
 {
 
@@ -148,7 +150,7 @@
     locationUpperLeft = imagesArray[0];
     
     
-    self.boxDrawView = [[BoxDrawView alloc] initWithFrame:CGRectMake(0, 45, 320, 460)];
+    self.boxDrawView = [[BoxDrawView alloc] initWithFrame:CGRectMake(0, 45, 320, 415)];
     [self.view addSubview:self.boxDrawView];
     [self.boxDrawView setPoints:imagesArray];
     
@@ -158,6 +160,8 @@
     self.tracingPictureView.image = self.tracingPicture;
     
     self.imageScaleFactor = 1.5;
+    
+
     
     
 
@@ -175,12 +179,14 @@
     self.doneTracingButton = nil;
     self.LabelerText = nil;
     self.labelString = nil;
+    self.boxDrawView  = nil;
     [super viewDidUnload];
     
 }
 -(void)dealloc
 {
-    [self->_serverConnectionController release];
+    NSLog(@"Why");
+    [self.serverConnectionController release];
     [self.tracingPictureView release];
     [self.cancelButton release];
     [self.doneTracingButton release];
@@ -210,7 +216,7 @@
 -(IBAction)doneTracingAction:(id)sender
 {
     
-
+    NSLog(@"sendbutton hit");
     [self.serverConnectionController sendJPGtoServer:self.tracingPicture];
     
 
