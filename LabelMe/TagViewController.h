@@ -10,7 +10,7 @@
 #import "TagView.h"
 #import "Box.h"
 
-@interface AnnotationToolViewController : UIViewController{
+@interface TagViewController : UIViewController{
     
     IBOutlet TagView *annotationView;
     NSMutableDictionary *dictionaryBox;
@@ -18,6 +18,10 @@
     
     IBOutlet UIBarButtonItem *addButton;
     IBOutlet UIBarButtonItem *deleteButton;
+    IBOutlet UIImageView *imageView;
+    
+    IBOutlet UIToolbar *topToolbar;
+    IBOutlet UIToolbar *bottomToolbar;
     
     NSArray *colorArray;
     
@@ -38,6 +42,10 @@
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
 
 @property (retain, nonatomic) IBOutlet UITextField *label;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
+@property (nonatomic, retain) IBOutlet UIToolbar *topToolbar;
+@property (nonatomic, retain) IBOutlet UIToolbar *bottomToolbar;
 
 
 -(IBAction)addAction:(id)sender;
@@ -45,6 +53,6 @@
 -(IBAction)labelAction:(id)sender;
 -(IBAction)deleteAction:(id)sender;
 
-
+-(void)setImage:(UIImage *)image;
 
 @end

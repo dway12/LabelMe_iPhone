@@ -15,10 +15,11 @@
 
 @synthesize captureManager=             _captureManager;
 @synthesize toolbar =                   _toolbar;
-
+@synthesize tagViewController=          _tagViewController;
 @synthesize takePictureButton =         _takePictureButton;
 @synthesize stillImageOutput =          _stillImageOutput;
 @synthesize picture =                   _picture;
+
 
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,6 +34,9 @@
 }
 -(void)viewDidLoad
 {
+    
+    self.tagViewController = [[[TagViewController alloc] init] autorelease];
+    
     [self setCaptureManager:[[[CaptureSessionManager alloc] init] autorelease]];
     
 	[[self captureManager] addVideoInput];
@@ -139,7 +143,9 @@
          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
          self.picture = [[UIImage alloc] initWithData:imageData];
          
+         [self.tagViewController setImage:self.picture];
          
+         [self.navigationController pushViewController:self.tagViewController animated:YES];
          
          NSLog(@"%@",self.picture);
 

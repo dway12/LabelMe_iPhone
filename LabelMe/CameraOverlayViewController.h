@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "CaptureSessionManager.h"
-
+#import "TagViewController.h"
 
 
 
@@ -18,7 +18,7 @@
     
     
     @private
-    
+    TagViewController *                             _tagViewController;
     UIBarButtonItem *                               _takePictureButton;
     CaptureSessionManager *                         _captureManager;
     AVCaptureStillImageOutput  *                    _stillImageOutput;
@@ -30,7 +30,7 @@
 }
 @property(nonatomic, retain) UIImage * picture;
 @property(nonatomic, retain) AVCaptureStillImageOutput *stillImageOutput;
-
+@property(nonatomic, retain) TagViewController *tagViewController;
 @property (retain) CaptureSessionManager *captureManager;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 

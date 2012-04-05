@@ -57,8 +57,8 @@
 }
 -(int) setLowerRight:(CGPoint ) point{
     int corner=0;
-    if (point.y>372-LINEWIDTH/2) {
-        point.y=372-LINEWIDTH/2;
+    if (point.y>330-LINEWIDTH/2) {
+        point.y=330-LINEWIDTH/2;
     }
     if (point.x>320-LINEWIDTH/2) {
         point.x=320-LINEWIDTH/2;
@@ -97,8 +97,8 @@
         end.y=LINEWIDTH/2-upperLeft.y+start.y;
         
     }
-    if (lowerRigth.y+end.y-start.y>372-LINEWIDTH/2) {
-        end.y=372-LINEWIDTH/2-lowerRigth.y+start.y;
+    if (lowerRigth.y+end.y-start.y>330-LINEWIDTH/2) {
+        end.y=330-LINEWIDTH/2-lowerRigth.y+start.y;
         
         
     }
@@ -161,8 +161,8 @@
 -(void) updateLowerRight:(CGPoint) start:(CGPoint) end{
     lowerRigth.x=lowerRigth.x+end.x-start.x;
     lowerRigth.y=lowerRigth.y+end.y-start.y;
-    if (lowerRigth.y>372-LINEWIDTH/2) {
-        lowerRigth.y=372-LINEWIDTH/2;
+    if (lowerRigth.y>330-LINEWIDTH/2) {
+        lowerRigth.y=330-LINEWIDTH/2;
     }
     if (lowerRigth.x>320-LINEWIDTH/2) {
         lowerRigth.x=320-LINEWIDTH/2;

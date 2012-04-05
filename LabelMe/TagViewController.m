@@ -9,9 +9,12 @@
 #import "TagViewController.h"
 #import "Constants.h"
 
-@implementation AnnotationToolViewController
+@implementation TagViewController
 
 @synthesize annotationView, dictionaryBox, addButton,deleteButton, label,colorArray;
+@synthesize imageView = _imageView;
+@synthesize topToolbar = _topToolbar;
+@synthesize bottomToolbar = _bottomToolbar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +29,7 @@
         numLabels=1;
         [box release];
         
-        annotationView = [[TagView alloc] initWithFrame:CGRectMake(0, 44, 320, 372)];
+      //  annotationView = [[TagView alloc] initWithFrame:CGRectMake(0, 45, 320, 385)];
         
         
         // Custom initialization
@@ -48,12 +51,19 @@
 {
     [super viewDidLoad];
     
-    // annotationView = [[AnnotationView alloc] initWithFrame:CGRectMake(0, 44, 320, 372)];
+    self.annotationView = [[TagView alloc] initWithFrame:CGRectMake(0, 45, 320, 330)];
     //[annotationView setDictionary:dictionaryBox];
     annotationView.dictionaryBox = self.dictionaryBox;
     //[annotationView setSelectedBox:0];
     selectedBox=0;
+    
+   // self.topToolbar.frame = CGRectMake(0,0, 320, 45);
+    [self.annotationView setBackgroundColor:[UIColor clearColor]];
+    
     [self.view addSubview:self.annotationView];
+    [self.view addSubview:self.topToolbar];
+    [self.view addSubview:self.bottomToolbar];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -68,6 +78,14 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)setImage:(UIImage *)image{
+    
+    NSLog(@"%f", self.view.frame.size.width);
+   // self.imageView.image = [UIImage imageNamed:@"LabelMeIcon.png"];
+    self.imageView.image = image;
+    NSLog(@"%@",image);
 }
 
 

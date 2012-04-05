@@ -89,7 +89,7 @@
 		CD22C0C114D0730900404461 /* LabelMeImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage1.jpg; sourceTree = "<group>"; };
 		CD22C0C214D0730900404461 /* LabelMeImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage2.jpg; sourceTree = "<group>"; };
 		CD22C0C714D0751400404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
-		CD22C0C914D0753A00404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
+		CD22C0C914D0753A00404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = SOURCE_ROOT; };
 		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
 		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
@@ -165,7 +165,6 @@
 		CDC4A9B21433A5ED007660BB = {
 			isa = PBXGroup;
 			children = (
-				CD22C0C914D0753A00404461 /* LabelMeIcon.png */,
 				CDC4A9C91433A5ED007660BB /* LabelMe */,
 				CDC4A9F41433A5EE007660BB /* LabelMeTests */,
 				CDC4A9C01433A5ED007660BB /* Frameworks */,
@@ -270,6 +269,7 @@
 		CDFBFED91501559300BCF4A9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CD22C0C914D0753A00404461 /* LabelMeIcon.png */,
 				CD22C0C714D0751400404461 /* LabelMeIcon.png */,
 				CD22C0C014D0730900404461 /* LabelMeImage.png */,
 				CD22C0C114D0730900404461 /* LabelMeImage1.jpg */,

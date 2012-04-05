@@ -27,7 +27,7 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor clearColor ]];//colorWithRed:1 green:1 blue:1 alpha:0.6]];
+        [self setBackgroundColor:[UIColor clearColor]];//colorWithRed:1 green:1 blue:1 alpha:0.6]];
         selectedBox=0;
         move=NO;
         size=NO;
