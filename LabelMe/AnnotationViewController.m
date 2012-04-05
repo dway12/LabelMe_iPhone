@@ -10,36 +10,29 @@
 
 @implementation AnnotationViewController
 
-@synthesize cameraOverlayViewController =       _cameraOverlayViewController;
+@synthesize cameraOverlayViewController=        _cameraOverlayViewController;
 @synthesize takePictureModeButton =             _takePictureModeButton;
 @synthesize delegate =                          _delegate;
 @synthesize capturedImages =                    _capturedImages;
 @synthesize backButton =                        _backButton;
-@synthesize tracingOverlayViewController =      _tracingOverlayViewController;
 @synthesize tracingModeButton =                 _tracingModeButton;
 
 
 -(void)viewDidLoad
 {
-    self.cameraOverlayViewController = 
-    [[[CameraOverlayViewController alloc] initWithNibName:@"CameraOverlay" bundle:nil] autorelease];
+
     
-    self.tracingOverlayViewController = 
-    [[TracingOverlayViewController alloc] initWithNibName:@"TracingOverlayView" bundle:nil];
+    
     
     self.capturedImages = [NSMutableArray array];
 
     
-    self.cameraOverlayViewController.delegate = self;
-    self.tracingOverlayViewController.delegate = self;
     
 }
 -(void)viewDidUnload
 {
-    self.tracingOverlayViewController = nil;
     self.tracingModeButton = nil;
     self.delegate = nil;
-    self.cameraOverlayViewController = nil;
     self.takePictureModeButton = nil;
     self.backButton = nil;
     self.capturedImages = nil;
@@ -48,8 +41,7 @@
 }
 -(void)dealloc
 {
-    NSLog(@"??");
-    [self.tracingOverlayViewController release];
+  //  NSLog(@"??");
     [self.tracingModeButton release];
     [self.cameraOverlayViewController release];
     [self.takePictureModeButton release];
@@ -69,8 +61,8 @@
     
     if ([UIImagePickerController isSourceTypeAvailable:sourceType])
     {
-        [self.cameraOverlayViewController setupImagePicker:sourceType];
-        [self presentModalViewController:self.cameraOverlayViewController.imagePickerController animated:YES];
+ //       [self.cameraOverlayViewController setupImagePicker:sourceType];
+ //       [self presentModalViewController:self.cameraOverlayViewController.imagePickerController animated:YES];
     }
     
     
@@ -108,7 +100,6 @@
     
     //send picture to labeling view
     [self.capturedImages addObject:picture];
-    [self.tracingOverlayViewController setPicture:picture];
 
 
     
@@ -118,7 +109,6 @@
 -(IBAction)startTracing:(id)sender
 {
 
-    [self presentModalViewController:self.tracingOverlayViewController animated:YES];
     
 }
 -(void)didFinishWithCamera
@@ -146,7 +136,6 @@
         return;
     }
 
-    [self presentModalViewController:self.tracingOverlayViewController animated:YES];
 }
 
 

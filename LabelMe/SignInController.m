@@ -9,8 +9,10 @@
 #import "SignInController.h"
 
 @implementation SignInController
-@synthesize backButton =                _backButton;
+@synthesize createAccountController =       _createAccountController;
+
 @synthesize signInButton =              _signInbutton;
+@synthesize createAccountButton = _createAccountButton;
 @synthesize passwordTextField =         _passwordTextField;
 @synthesize usernameTextField =         _usernameTextField;
 
@@ -36,16 +38,22 @@
 - (void)viewDidLoad
 {
     self.title = @"Sign In";
+    
+    self.createAccountController = 
+    [[[CreateAccountController alloc] initWithNibName:@"CreateAccountView" bundle:nil] autorelease];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
-    self.backButton = nil;
     self.signInButton = nil;
+    self.createAccountButton = nil;
     self.passwordTextField = nil;
     self.usernameTextField = nil;
+    self.createAccountController = nil;
+
     
     
     [super viewDidUnload];
@@ -54,10 +62,12 @@
 
 -(void) dealloc
 {
-    [self.backButton release];
     [self.signInButton release];
+    [self.createAccountButton release];
     [self.passwordTextField release];
     [self.usernameTextField release];
+    [self->_createAccountController release];
+
     
     
     [super dealloc];
@@ -164,6 +174,11 @@
                                           otherButtonTitles: nil];
     [alert show];
     [alert release];
+}
+
+-(IBAction)createAccountAction:(id)sender
+{
+    [[self navigationController] pushViewController:self.createAccountController animated:YES];
 }
 
 

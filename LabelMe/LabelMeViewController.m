@@ -12,13 +12,13 @@
 
 @implementation LabelMeViewController
 
+@synthesize cameraOverlayViewController =       _cameraOverlayViewController;
 
 @synthesize AnnotationButton =              _AnnotationButton;
 @synthesize annotationViewController =      _annotationViewController;
 @synthesize LabelMeView =                   _LabelMeView; 
 @synthesize signInButton =                  _signInButton;
 @synthesize createAccountButton =           _createAccountButton;
-@synthesize createAccountController =       _createAccountController;
 @synthesize signInController =              _signInController;
 
 #pragma mark -
@@ -28,20 +28,17 @@
 {
     
     //create View Controllers
-    self.annotationViewController = 
-            [[[AnnotationViewController alloc] initWithNibName:@"AnnotationView" bundle:nil] autorelease];
-    self.createAccountController = 
-            [[[CreateAccountController alloc] initWithNibName:@"CreateAccountView" bundle:nil] autorelease];
+ //   self.annotationViewController = 
+ //           [[[AnnotationViewController alloc] initWithNibName:@"AnnotationView" bundle:nil] autorelease];
+
     self.signInController = 
             [[[SignInController alloc] initWithNibName:@"SignInController" bundle:nil] autorelease];
     
-    self.annotationViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    self.createAccountController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    self.signInController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    self.cameraOverlayViewController = 
+            [[[CameraOverlayViewController alloc] initWithNibName:@"CameraOverlay" bundle:nil]  autorelease];
+    
 
-    self.createAccountController.delegate = self;
-    self.annotationViewController.delegate = self;
-    self.signInController.delegate = self;
+
     
     UIButton *modalViewButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 	[modalViewButton addTarget:self
@@ -62,7 +59,6 @@
     self.signInButton = nil;
     self.signInController = nil;
     self.createAccountButton = nil;
-    self.createAccountController = nil;
 }
 
 
@@ -74,7 +70,6 @@
     [self->_AnnotationButton release];
     [self->_signInButton release];
     [self->_signInController release];
-    [self->_createAccountController release];
     [self->_createAccountButton release];
     [super dealloc];
     
@@ -88,35 +83,20 @@
     
     
 }
--(IBAction)createAccountAction:(id)sender
-{
-    [[self navigationController] pushViewController:self.createAccountController animated:YES];
-}
+
 -(IBAction)signInAction:(id)sender
 {
     [[self navigationController] pushViewController:self.signInController animated:YES];
 }
 
-#pragma mark -
-#pragma mark AnnotationViewDelegate
--(void)didHitBack
+
+
+-(IBAction)pictureModeButtonAction:(id)sender
 {
-
-    [self dismissModalViewControllerAnimated:YES];
-
-}
-
-#pragma mark -
-#pragma mark CreateAccountControllerDelegate
--(void)didHitBackFromCreatingAccount
-{
+    [[self navigationController] pushViewController:self.cameraOverlayViewController animated:YES];    
     
-    [self dismissModalViewControllerAnimated:YES];
 }
-#pragma mark - 
-#pragma mark SignInControllerDelegate
--(void)didHitBackFromSignInController
-{
-    [self dismissModalViewControllerAnimated:YES];
-}
+
+
+
 @end

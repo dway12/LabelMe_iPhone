@@ -41,7 +41,7 @@
     [self.emailTextField release];
     [self.passwordTextField release];
     [self.createAccountButton release];
-    
+    [super dealloc];
 }
 
 
@@ -172,6 +172,8 @@
     [alert show];
     [alert release];
 }
+
+
 
 -(void)sendCreateAccountToServer
 {

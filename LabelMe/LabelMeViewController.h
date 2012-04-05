@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioServices.h>
 #import "AnnotationViewController.h"
-#import "CreateAccountController.h"
 #import "SignInController.h"
+#import "CameraOverlayViewController.h"
 
 
 
@@ -20,7 +20,8 @@
     
 
     AnnotationViewController *  _annotationViewController;
-    CreateAccountController *   _createAccountController;    
+    CameraOverlayViewController *               _cameraOverlayViewController;
+
     SignInController *          _signInController;
     
     
@@ -37,8 +38,8 @@
 
 
 @property (nonatomic, retain) AnnotationViewController *annotationViewController;
-@property (nonatomic, retain) CreateAccountController *createAccountController;
 @property (nonatomic, retain) SignInController *signInController;
+@property (nonatomic, retain) CameraOverlayViewController *cameraOverlayViewController;
 
 //home screen buttons
 @property (nonatomic, retain) IBOutlet UIButton *AnnotationButton;
@@ -51,7 +52,6 @@
 //home screen button actions
 -(IBAction)annotationAction:(id)sender;
 -(IBAction)signInAction:(id)sender;
--(IBAction)createAccountAction:(id)sender;
 
 
 

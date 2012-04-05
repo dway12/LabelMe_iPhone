@@ -8,32 +8,34 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-
-@protocol CameraOverlayViewControllerDelegate; 
-
+#import "CaptureSessionManager.h"
 
 
-@interface CameraOverlayViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+
+@interface CameraOverlayViewController : UIViewController <UINavigationControllerDelegate>
 {
     
-    id <CameraOverlayViewControllerDelegate>        _delegate;
-    UIImagePickerController *                       _imagePickerController;
     
     @private
     
     UIBarButtonItem *                               _takePictureButton;
-    UIBarButtonItem *                               _backButton;
+    CaptureSessionManager *                         _captureManager;
+    AVCaptureStillImageOutput  *                    _stillImageOutput;
     
+    IBOutlet UIToolbar *                            _toolbar;
+    UIImage *                                       _picture;
     
     
 }
+@property(nonatomic, retain) UIImage * picture;
+@property(nonatomic, retain) AVCaptureStillImageOutput *stillImageOutput;
 
-@property (nonatomic, assign) id<CameraOverlayViewControllerDelegate> delegate;
-@property (nonatomic, retain) IBOutlet UIImagePickerController *imagePickerController;
+@property (retain) CaptureSessionManager *captureManager;
+@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
+
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *takePictureButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 
--(void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType;
 
 -(IBAction)done:(id)sender;
 -(IBAction)takePicture:(id)sender;
@@ -42,9 +44,3 @@
 @end
 
 
-@protocol CameraOverlayViewControllerDelegate
-- (void)didTakePicture:(UIImage *)picture;
-- (void)didFinishWithCamera;
-- (void)rightToTrace;
-- (void)didHitDone;
-@end

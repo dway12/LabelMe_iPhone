@@ -13,16 +13,18 @@
 		CD0D71A314E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A214E1C35400B12C38 /* glossy_button_blank_blue_rectangle.png */; };
 		CD0D71A614E1C63D00B12C38 /* CreateAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0D71A514E1C63D00B12C38 /* CreateAccountController.m */; };
 		CD0D71A814E1C97100B12C38 /* CreateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */; };
+		CD163BB8152CE63900569C4B /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD163BB6152CE63900569C4B /* TagViewController.m */; };
+		CD163BB9152CE63900569C4B /* TagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD163BB7152CE63900569C4B /* TagViewController.xib */; };
+		CD163BBD152CE6BD00569C4B /* TagView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD163BBC152CE6BD00569C4B /* TagView.m */; };
+		CD163BC0152CE7A300569C4B /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = CD163BBF152CE7A300569C4B /* Box.m */; };
 		CD18398914C8B042003BFC54 /* LabelMeImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD18398814C8B042003BFC54 /* LabelMeImage.jpg */; };
 		CD22C0C314D0730900404461 /* LabelMeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C014D0730900404461 /* LabelMeImage.png */; };
 		CD22C0C414D0730900404461 /* LabelMeImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C114D0730900404461 /* LabelMeImage1.jpg */; };
 		CD22C0C514D0730900404461 /* LabelMeImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C214D0730900404461 /* LabelMeImage2.jpg */; };
 		CD22C0C814D0751400404461 /* LabelMeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C714D0751400404461 /* LabelMeIcon.png */; };
 		CD22C0CA14D0753A00404461 /* LabelMeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C914D0753A00404461 /* LabelMeIcon.png */; };
-		CD22C0D114D0A04900404461 /* BoxDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD22C0D014D0A04900404461 /* BoxDrawView.m */; };
 		CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2819871448C01F00634D37 /* CameraOverlay.xib */; };
 		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
-		CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */; };
 		CD9CBD571455E58800F15024 /* TracingOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9CBD561455E58800F15024 /* TracingOverlayView.xib */; };
 		CDC4A9C21433A5ED007660BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C11433A5ED007660BB /* UIKit.framework */; };
 		CDC4A9C41433A5ED007660BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC4A9C31433A5ED007660BB /* Foundation.framework */; };
@@ -44,6 +46,9 @@
 		CDC4A9F91433A5EE007660BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDC4A9F71433A5EE007660BB /* InfoPlist.strings */; };
 		CDC4A9FB1433A5EE007660BB /* LabelMeTests.h in Resources */ = {isa = PBXBuildFile; fileRef = CDC4A9FA1433A5EE007660BB /* LabelMeTests.h */; };
 		CDC4A9FD1433A5EE007660BB /* LabelMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */; };
+		CDD37E03152B7B18003159D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD37E02152B7B18003159D4 /* AVFoundation.framework */; };
+		CDD37E06152B7B74003159D4 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD37E05152B7B74003159D4 /* CaptureSessionManager.m */; };
+		CDD37E14152B97AD003159D4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD37E13152B97AD003159D4 /* ImageIO.framework */; };
 		CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE26979143652D400B200FE /* LabelMeViewController.m */; };
 		CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2697C1436542800B200FE /* CameraOverlayViewController.m */; };
 		CDF0CDE3143F77E20094CA4F /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */; };
@@ -71,19 +76,23 @@
 		CD0D71A414E1C63D00B12C38 /* CreateAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountController.h; sourceTree = "<group>"; };
 		CD0D71A514E1C63D00B12C38 /* CreateAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountController.m; sourceTree = "<group>"; };
 		CD0D71A714E1C97100B12C38 /* CreateAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountView.xib; sourceTree = "<group>"; };
+		CD163BB5152CE63900569C4B /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
+		CD163BB6152CE63900569C4B /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		CD163BB7152CE63900569C4B /* TagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagViewController.xib; sourceTree = "<group>"; };
+		CD163BBB152CE6BD00569C4B /* TagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagView.h; sourceTree = "<group>"; };
+		CD163BBC152CE6BD00569C4B /* TagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagView.m; sourceTree = "<group>"; };
+		CD163BBE152CE7A200569C4B /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		CD163BBF152CE7A300569C4B /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		CD163BC9152CE8E400569C4B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CD18398814C8B042003BFC54 /* LabelMeImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage.jpg; sourceTree = "<group>"; };
 		CD22C0C014D0730900404461 /* LabelMeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeImage.png; sourceTree = "<group>"; };
 		CD22C0C114D0730900404461 /* LabelMeImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage1.jpg; sourceTree = "<group>"; };
 		CD22C0C214D0730900404461 /* LabelMeImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage2.jpg; sourceTree = "<group>"; };
 		CD22C0C714D0751400404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
 		CD22C0C914D0753A00404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
-		CD22C0CF14D0A04900404461 /* BoxDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDrawView.h; sourceTree = "<group>"; };
-		CD22C0D014D0A04900404461 /* BoxDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDrawView.m; sourceTree = "<group>"; };
 		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
 		CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
-		CD9CBD521455E54700F15024 /* TracingOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracingOverlayViewController.h; sourceTree = "<group>"; };
-		CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracingOverlayViewController.m; sourceTree = "<group>"; };
 		CD9CBD561455E58800F15024 /* TracingOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TracingOverlayView.xib; sourceTree = "<group>"; };
 		CDC4A9BD1433A5ED007660BB /* LabelMe_work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMe_work.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC4A9C11433A5ED007660BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -109,6 +118,10 @@
 		CDC4A9F81433A5EE007660BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDC4A9FA1433A5EE007660BB /* LabelMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelMeTests.h; sourceTree = "<group>"; };
 		CDC4A9FC1433A5EE007660BB /* LabelMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelMeTests.m; sourceTree = "<group>"; };
+		CDD37E02152B7B18003159D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CDD37E04152B7B74003159D4 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		CDD37E05152B7B74003159D4 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		CDD37E13152B97AD003159D4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CDE26978143652D400B200FE /* LabelMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelMeViewController.h; sourceTree = "<group>"; };
 		CDE26979143652D400B200FE /* LabelMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelMeViewController.m; sourceTree = "<group>"; };
 		CDE2697B1436542800B200FE /* CameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayViewController.h; sourceTree = "<group>"; };
@@ -125,10 +138,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD37E14152B97AD003159D4 /* ImageIO.framework in Frameworks */,
 				CDC4A9C21433A5ED007660BB /* UIKit.framework in Frameworks */,
 				CDC4A9C41433A5ED007660BB /* Foundation.framework in Frameworks */,
 				CDC4A9C61433A5ED007660BB /* CoreGraphics.framework in Frameworks */,
 				CDC4A9C81433A5ED007660BB /* CoreData.framework in Frameworks */,
+				CDD37E03152B7B18003159D4 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +185,8 @@
 		CDC4A9C01433A5ED007660BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDD37E13152B97AD003159D4 /* ImageIO.framework */,
+				CDD37E02152B7B18003159D4 /* AVFoundation.framework */,
 				CDC4A9C11433A5ED007660BB /* UIKit.framework */,
 				CDC4A9C31433A5ED007660BB /* Foundation.framework */,
 				CDC4A9C51433A5ED007660BB /* CoreGraphics.framework */,
@@ -186,6 +203,8 @@
 				CDC4A9D31433A5EE007660BB /* LabelMeAppDelegate.m */,
 				CD0C3B7A14F7F706002E832A /* ServerConnectionController.h */,
 				CD0C3B7B14F7F706002E832A /* ServerConnectionController.m */,
+				CDD37E04152B7B74003159D4 /* CaptureSessionManager.h */,
+				CDD37E05152B7B74003159D4 /* CaptureSessionManager.m */,
 				CDC4A9D51433A5EE007660BB /* LabelMe.xcdatamodeld */,
 				CDFBFEDF150155E900BCF4A9 /* ViewControllers */,
 				CDFBFEE0150156D100BCF4A9 /* Displays */,
@@ -276,10 +295,13 @@
 				CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */,
 				CDE2697B1436542800B200FE /* CameraOverlayViewController.h */,
 				CDE2697C1436542800B200FE /* CameraOverlayViewController.m */,
-				CD9CBD521455E54700F15024 /* TracingOverlayViewController.h */,
-				CD9CBD531455E54700F15024 /* TracingOverlayViewController.m */,
-				CD22C0CF14D0A04900404461 /* BoxDrawView.h */,
-				CD22C0D014D0A04900404461 /* BoxDrawView.m */,
+				CD163BB5152CE63900569C4B /* TagViewController.h */,
+				CD163BB6152CE63900569C4B /* TagViewController.m */,
+				CD163BBB152CE6BD00569C4B /* TagView.h */,
+				CD163BBC152CE6BD00569C4B /* TagView.m */,
+				CD163BBE152CE7A200569C4B /* Box.h */,
+				CD163BBF152CE7A300569C4B /* Box.m */,
+				CD163BC9152CE8E400569C4B /* Constants.h */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -292,6 +314,7 @@
 				CDF0CDE2143F77E20094CA4F /* AnnotationView.xib */,
 				CD2819871448C01F00634D37 /* CameraOverlay.xib */,
 				CD9CBD561455E58800F15024 /* TracingOverlayView.xib */,
+				CD163BB7152CE63900569C4B /* TagViewController.xib */,
 			);
 			name = Displays;
 			sourceTree = "<group>";
@@ -341,7 +364,7 @@
 		CDC4A9B41433A5ED007660BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = CDC4A9B71433A5ED007660BB /* Build configuration list for PBXProject "LabelMe_work" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -384,6 +407,7 @@
 				CD0D71A814E1C97100B12C38 /* CreateAccountView.xib in Resources */,
 				CDF85ECF14F82DDE00D19009 /* glossy_button_blank_black_rectangle.png in Resources */,
 				CDFBFEE51501681D00BCF4A9 /* SignInController.xib in Resources */,
+				CD163BB9152CE63900569C4B /* TagViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,11 +451,13 @@
 				CDE2697A143652D400B200FE /* LabelMeViewController.m in Sources */,
 				CDE2697D1436542800B200FE /* CameraOverlayViewController.m in Sources */,
 				CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */,
-				CD9CBD541455E54700F15024 /* TracingOverlayViewController.m in Sources */,
-				CD22C0D114D0A04900404461 /* BoxDrawView.m in Sources */,
 				CD0D71A614E1C63D00B12C38 /* CreateAccountController.m in Sources */,
 				CD0C3B7C14F7F706002E832A /* ServerConnectionController.m in Sources */,
 				CDFBFEE41501681D00BCF4A9 /* SignInController.m in Sources */,
+				CDD37E06152B7B74003159D4 /* CaptureSessionManager.m in Sources */,
+				CD163BB8152CE63900569C4B /* TagViewController.m in Sources */,
+				CD163BBD152CE6BD00569C4B /* TagView.m in Sources */,
+				CD163BC0152CE7A300569C4B /* Box.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

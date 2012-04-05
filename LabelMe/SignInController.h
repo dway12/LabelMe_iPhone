@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateAccountController.h"
+
 
 
 
@@ -14,8 +16,10 @@
 
 {
     
-    IBOutlet UIButton *     _backButton;
-    IBOutlet UIButton *     _signInButton;
+    CreateAccountController *   _createAccountController;    
+
+    IBOutlet UIBarButtonItem *     _signInButton;
+    IBOutlet UIBarButtonItem *     _createAccountButton;
     
     IBOutlet UITextField *  _usernameTextField;
     IBOutlet UITextField *  _passwordTextField;
@@ -32,12 +36,16 @@
     
     
 }
-@property (nonatomic, retain) IBOutlet UIButton *backButton;
-@property (nonatomic, retain) IBOutlet UIButton *signInButton;
+@property (nonatomic, retain) CreateAccountController *createAccountController;
+
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *signInButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *createAccountButton;
 @property (nonatomic, retain) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordTextField;
 
 -(IBAction) hitSignInButton:(id)sender;
+-(IBAction)createAccountAction:(id)sender;
+
 -(void)animateTextField: (UITextField*) textField up: (BOOL) up;
 -(void)showInvalidFieldAlert: (NSString *)incorrectStringFix:(NSString *)problemString;
 -(void)checkField;

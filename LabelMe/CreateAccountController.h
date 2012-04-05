@@ -39,7 +39,6 @@
 }
 
 
-@property (nonatomic, assign) IBOutlet UIButton *backButton;
 @property (nonatomic, assign) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, assign) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, assign) IBOutlet UITextField *emailTextField;
