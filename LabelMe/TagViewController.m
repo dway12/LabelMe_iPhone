@@ -15,6 +15,7 @@
 @synthesize imageView = _imageView;
 @synthesize topToolbar = _topToolbar;
 @synthesize bottomToolbar = _bottomToolbar;
+@synthesize doneButton = _doneButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,18 +52,24 @@
 {
     [super viewDidLoad];
     
-    self.annotationView = [[TagView alloc] initWithFrame:CGRectMake(0, 45, 320, 330)];
+   // self.annotationView = [[TagView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
     //[annotationView setDictionary:dictionaryBox];
     annotationView.dictionaryBox = self.dictionaryBox;
     //[annotationView setSelectedBox:0];
     selectedBox=0;
     
-   // self.topToolbar.frame = CGRectMake(0,0, 320, 45);
     [self.annotationView setBackgroundColor:[UIColor clearColor]];
-    
+
     [self.view addSubview:self.annotationView];
-    [self.view addSubview:self.topToolbar];
+//    [self.view addSubview:self.topToolbar];
+//    self.topToolbar.frame = CGRectMake(0,44, 320, 45);
+// //   NSLog(@"%f", self.view.frame.origin.y);
+// //   NSLog(@"%f", self.topToolbar.frame.origin.y);
     [self.view addSubview:self.bottomToolbar];
+    
+    NSLog(@"highasoi");
+    UIBarButtonItem *labelBar = [[UIBarButtonItem alloc] initWithCustomView:self.label];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:self.doneButton, self.deleteButton,labelBar,nil];
 
     // Do any additional setup after loading the view from its nib.
 }

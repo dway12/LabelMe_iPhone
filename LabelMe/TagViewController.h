@@ -15,7 +15,7 @@
     IBOutlet TagView *annotationView;
     NSMutableDictionary *dictionaryBox;
     IBOutlet UITextField *label;
-    
+    IBOutlet UIBarButtonItem *doneButton;
     IBOutlet UIBarButtonItem *addButton;
     IBOutlet UIBarButtonItem *deleteButton;
     IBOutlet UIImageView *imageView;
@@ -40,6 +40,7 @@
 @property (retain, nonatomic) NSMutableDictionary *dictionaryBox;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @property (retain, nonatomic) IBOutlet UITextField *label;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;

@@ -34,7 +34,6 @@
 }
 -(void)viewDidLoad
 {
-    
     self.tagViewController = [[[TagViewController alloc] init] autorelease];
     
     [self setCaptureManager:[[[CaptureSessionManager alloc] init] autorelease]];
