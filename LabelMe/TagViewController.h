@@ -53,6 +53,7 @@
 -(IBAction)labelFinish:(id)sender;
 -(IBAction)labelAction:(id)sender;
 -(IBAction)deleteAction:(id)sender;
+-(IBAction)sendAction:(id)sender;
 
 -(void)setImage:(UIImage *)image;
 

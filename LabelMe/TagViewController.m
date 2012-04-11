@@ -72,6 +72,7 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:self.doneButton, self.deleteButton,labelBar,nil];
 
     // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)viewDidUnload
@@ -89,10 +90,10 @@
 
 -(void)setImage:(UIImage *)image{
     
-    NSLog(@"%f", self.view.frame.size.width);
+   // NSLog(@"%f", self.view.frame.size.width);
    // self.imageView.image = [UIImage imageNamed:@"LabelMeIcon.png"];
     self.imageView.image = image;
-    NSLog(@"%@",image);
+   // NSLog(@"%@",image);
 }
 
 
@@ -312,6 +313,14 @@
     [annotationView setNeedsDisplay];
     
 }
+-(IBAction)sendAction:(id)sender{
+    
+    
+    
+}
+
+
+
 -(void) dealloc{
     [super dealloc];
     [annotationView dealloc];

@@ -21,7 +21,6 @@
 		CD22C0C314D0730900404461 /* LabelMeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C014D0730900404461 /* LabelMeImage.png */; };
 		CD22C0C414D0730900404461 /* LabelMeImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C114D0730900404461 /* LabelMeImage1.jpg */; };
 		CD22C0C514D0730900404461 /* LabelMeImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C214D0730900404461 /* LabelMeImage2.jpg */; };
-		CD22C0C814D0751400404461 /* LabelMeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C714D0751400404461 /* LabelMeIcon.png */; };
 		CD22C0CA14D0753A00404461 /* LabelMeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD22C0C914D0753A00404461 /* LabelMeIcon.png */; };
 		CD2819881448C01F00634D37 /* CameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2819871448C01F00634D37 /* CameraOverlay.xib */; };
 		CD8AD707143A38DB005FCCFC /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8AD706143A38DB005FCCFC /* AnnotationViewController.m */; };
@@ -88,7 +87,6 @@
 		CD22C0C014D0730900404461 /* LabelMeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeImage.png; sourceTree = "<group>"; };
 		CD22C0C114D0730900404461 /* LabelMeImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage1.jpg; sourceTree = "<group>"; };
 		CD22C0C214D0730900404461 /* LabelMeImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LabelMeImage2.jpg; sourceTree = "<group>"; };
-		CD22C0C714D0751400404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = "<group>"; };
 		CD22C0C914D0753A00404461 /* LabelMeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelMeIcon.png; sourceTree = SOURCE_ROOT; };
 		CD2819871448C01F00634D37 /* CameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlay.xib; sourceTree = "<group>"; };
 		CD8AD705143A38DB005FCCFC /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				CD22C0C914D0753A00404461 /* LabelMeIcon.png */,
-				CD22C0C714D0751400404461 /* LabelMeIcon.png */,
 				CD22C0C014D0730900404461 /* LabelMeImage.png */,
 				CD22C0C114D0730900404461 /* LabelMeImage1.jpg */,
 				CD22C0C214D0730900404461 /* LabelMeImage2.jpg */,
@@ -399,7 +396,6 @@
 				CD22C0C314D0730900404461 /* LabelMeImage.png in Resources */,
 				CD22C0C414D0730900404461 /* LabelMeImage1.jpg in Resources */,
 				CD22C0C514D0730900404461 /* LabelMeImage2.jpg in Resources */,
-				CD22C0C814D0751400404461 /* LabelMeIcon.png in Resources */,
 				CD22C0CA14D0753A00404461 /* LabelMeIcon.png in Resources */,
 				CD0D719F14E1C21800B12C38 /* glossy_button_blank_green_rectangle.png in Resources */,
 				CD0D71A114E1C28200B12C38 /* glossy_button_blank_red_rectangle.png in Resources */,
